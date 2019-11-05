@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="htk_final:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="063a8f5a-5835-4ea2-97df-7e1999985208" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/htk_final_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htk_final.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/META-INF/htk_final.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/RegisterUserServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/factory/DAOFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/BusinessPlanDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/DashboardDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/EatHabitsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/EmergencyContactDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/ExercisesDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/GoalsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/HydrationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/PressureDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/TodayDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleBusinessPlanDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleEatHabitsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleEmergencyContactDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleExercisesDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleGoalsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleHydrationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OraclePressureDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleTodayDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleUserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DBException/DBException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/db_connection_singleton/DBConnectManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/BusinessPlan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EatHabits.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EmergencyContact.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Exercises.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Goals.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Hydration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/People.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Pressure.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Today.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/testes/Test_DB_Oracle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/account_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/customizedAll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/dashboard_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/login_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/my_day_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/register_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/goals.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/imagem/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/imagem/fb3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/imagem/insta2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/index 2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/goals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/jquery-ui.theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/jquery-ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/my_account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/my_day.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/js/widgets/datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_account.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_day_page.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/register_user.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/META-INF/htk_final.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/controller/LoginServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/controller/RegisterUserServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/factory/DAOFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/BusinessPlanDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/DashboardDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/EatHabitsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/EmergencyContactDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/ExercisesDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/GoalsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/HydrationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/PressureDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/TodayDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleBusinessPlanDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleEatHabitsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleEmergencyContactDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleExercisesDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleGoalsDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleHydrationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OraclePressureDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleTodayDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleUserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/DBException/DBException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/db_connection_singleton/DBConnectManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/BusinessPlan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EatHabits.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EmergencyContact.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Exercises.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Goals.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Hydration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/People.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Pressure.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Today.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/htk_final/testes/Test_DB_Oracle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/factory/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/BusinessPlanDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/DashboardDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/EatHabitsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/EmergencyContactDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/ExercisesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/GoalsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/HydrationDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/PressureDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/TodayDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleBusinessPlanDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleEatHabitsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleEmergencyContactDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleExercisesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleGoalsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleHydrationDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OraclePressureDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleTodayDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DBException/DBException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/db_connection_singleton/DBConnectManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/BusinessPlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/EatHabits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/EmergencyContact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/Exercises.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/Goals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/Hydration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/People.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/Pressure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/Today.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/entities_beans/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testes/TestProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testes/Test_DB_Oracle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/account_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/customizedAll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/dashboard_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/login_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/my_day_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/register_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css_customized/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/goals.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/imagem/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/imagem/fb3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/imagem/insta2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/goals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/jquery-ui.theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery-ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/my_account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/my_day.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/widgets/datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/my_account.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/my_day_page.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/register_user.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/js/register.js" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1SzFfbPuATZertIx5xvb03G8uNU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/model/DAO/impl" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/model/DAO/impl" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/pages" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model.DAO.impl" />
+      <recent name="DAO" />
+      <recent name="db_connection" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/snippets" />
+      <recent name="$PROJECT_DIR$/src/model/DAO/impl" />
+      <recent name="$PROJECT_DIR$/web/recursos" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="htk_final:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/htk_final_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_htk_final" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52908" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="htk_final:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="063a8f5a-5835-4ea2-97df-7e1999985208" name="Default Changelist" comment="" />
+      <created>1572558621936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572558621936</updated>
+      <workItem from="1572558623379" duration="200000" />
+      <workItem from="1572558854890" duration="767000" />
+      <workItem from="1572559666254" duration="4282000" />
+      <workItem from="1572564293486" duration="3332000" />
+      <workItem from="1572689390773" duration="23310000" />
+      <workItem from="1572906822565" duration="11844000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

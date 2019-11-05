@@ -1,0 +1,23 @@
+/*================== Meus Dados  =============== */
+
+.account_wrap {
+    height: auto;
+    margin: 30px;
+}
+
+.account-card-container {
+    max-width: 400px;
+    margin: 20px;
+    height: auto;
+}
+
+.card-header {
+    background: white;
+    color: blueviolet;
+}
+
+.account_title {
+    margin-top: 100px;
+    padding-top: 20px;
+    text-align: center;
+}

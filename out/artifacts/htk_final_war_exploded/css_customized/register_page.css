@@ -1,0 +1,34 @@
+/*================== Register =============== */
+
+.register_wrap {
+    height: auto;
+    margin: 30px;
+}
+
+.register-card-container {
+    max-width: 400px;
+    margin: 20px;
+    height: auto;
+}
+
+.card-header {
+    background: white;
+    color: blueviolet;
+}
+
+.register_title {
+    margin-top: 100px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.format_buttons {
+    margin-top: 20px;
+    text-align: end;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+
