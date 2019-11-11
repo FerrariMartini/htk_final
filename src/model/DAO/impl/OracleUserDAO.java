@@ -7,6 +7,7 @@ import model.entities_beans.EmergencyContact;
 import model.entities_beans.User;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -24,7 +25,9 @@ public class OracleUserDAO implements UserDAO {
      */
 
     @Override
-    public void create(User user, EmergencyContact ec) throws DBException {
+    public boolean create(User user, EmergencyContact ec) throws DBException {
+
+        boolean isCreate = false;
 
         try {
             connection = DBConnectManager.getConnection();
@@ -42,8 +45,8 @@ public class OracleUserDAO implements UserDAO {
             stmt.setString(1, user.getCpf_id());
             stmt.setString(2, user.getName());
             stmt.setString(3, user.getLastName());
-            java.sql.Date birthday = new java.sql.Date(user.getBirthday().getTimeInMillis());
-            stmt.setDate(4, birthday);
+//            java.sql.Date birthday = new java.sql.Date(user.getBirthday().getTimeInMillis());
+            stmt.setDate(4, (Date) user.getBirthday());
             stmt.setString(5, String.valueOf(user.getGender()));
             stmt.setString(6, user.getEmail());
             stmt.setString(7, user.getPwd());
@@ -67,6 +70,7 @@ public class OracleUserDAO implements UserDAO {
 
             stmt.executeUpdate();
 
+            isCreate = true;
 
 
         } catch (SQLException e) {
@@ -80,6 +84,8 @@ public class OracleUserDAO implements UserDAO {
                 e.printStackTrace();
             }
         }
+
+        return isCreate;
     }
 
     /**
@@ -158,5 +164,10 @@ public class OracleUserDAO implements UserDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public String auth(String email) throws DBException {
+        return "ivanferrarimartini@yahoo.com.br";
     }
 }

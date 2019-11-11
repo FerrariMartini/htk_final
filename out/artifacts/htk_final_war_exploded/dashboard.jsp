@@ -5,7 +5,7 @@
   Time: 19:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,28 +19,8 @@
     <meta content="IE-edge" http-equiv="X-UA-Compatible">
     <!--Descrevendo a aplicação web para google-->
     <meta content="Monitoramento inteligente da sua saúde." name="description">
-    <!--refeenciando a biblioteca BootStrap-->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--	Determinando uma Font padrão-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <!--	 Fonte da Logo Health Track-->
-    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
-
-    <!-- referenciando o arquivo CSS customizado -->
-    <link href="css_customized/customizedAll.css" rel="stylesheet" title="estilo principal">
-    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
-
-    <!--refeenciando o Jquery-->
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui/jquery-ui.min.js"></script>
-    <script src="js/widgets/datepicker.js"></script>
-
-    <!--usando biblioteca fontawesome-->
-    <script src="https://kit.fontawesome.com/9299b2b589.js"></script>
+    <%@include file="header.jsp"%>
 
     <title>Health Track - Dashboard</title>
 
@@ -49,47 +29,7 @@
 <body>
 <div class="container-fluid">
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top navbar-light">
-
-            <div class="container align-items-center">
-
-                <div class="brand_container">
-                    <a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
-                </div>
-
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                        class="navbar-toggler"
-                        data-target="#menu" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="container">
-                    <div class="collapse navbar-collapse justify-content-end" id="menu">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="dashboard.jsp">Resumo da minha Saúde</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_day_page.jsp">Meu Dia</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_account.jsp">Meus Dados</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_account.jsp">Minhas Metas</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link " href="login_page.jsp">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <%@include file="menu_logado.jsp" %>
     </header>
 
     <!--Sessão principal -->
@@ -325,5 +265,9 @@
         </section>
     </main>
 </div>
+<script src="js/jquery-3.4.1.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/widgets/datepicker.js"></script>
 </body>
 </html>

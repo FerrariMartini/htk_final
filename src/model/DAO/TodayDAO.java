@@ -7,7 +7,7 @@ import model.entities_beans.User;
 
 public interface TodayDAO {
 
-    public void create(Today today) throws DBException;
+    public boolean create(Today today) throws DBException;
 
 
 

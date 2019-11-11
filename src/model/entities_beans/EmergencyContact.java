@@ -10,8 +10,7 @@ package model.entities_beans;
 public final class EmergencyContact extends People {
     private String kinship;
 
-    public EmergencyContact(String kinship) {
-        this.kinship = kinship;
+    public EmergencyContact() {
     }
 
     public EmergencyContact(String id, String name, String lastName, String phone, String email, String kinship) {

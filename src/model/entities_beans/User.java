@@ -8,7 +8,7 @@ package model.entities_beans;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
 
 public final class User extends People implements Serializable {
 
@@ -16,7 +16,7 @@ public final class User extends People implements Serializable {
 
     public static SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
 
-    private Calendar birthday;
+    private Date birthday;
     private Character gender;
     private String pwd;
     private Double initWeight;
@@ -24,12 +24,13 @@ public final class User extends People implements Serializable {
     private Double initIMC;
     private BusinessPlan type;
 
+
     public User() {
 
     }
 
     public User(String id, String name, String lastName, String phone, String email,
-                Calendar birthday, Character gender, String pwd, Double initWeight, Double initHeight,
+                Date birthday, Character gender, String pwd, Double initWeight, Double initHeight,
                 BusinessPlan type) {
         super(id, name, lastName, phone, email);
         this.birthday = birthday;
@@ -42,7 +43,7 @@ public final class User extends People implements Serializable {
 
     }
 
-    public Calendar getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
@@ -106,4 +107,23 @@ public final class User extends People implements Serializable {
     private double evaluateImc(double initWeight, double initHeight) {
         return initWeight / (initHeight * initHeight);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "birthday=" + birthday +
+                ", gender=" + gender +
+                ", pwd='" + pwd + '\'' +
+                ", initWeight=" + initWeight +
+                ", initHeight=" + initHeight +
+                ", initIMC=" + initIMC +
+                ", type=" + type +
+                ", cpf_id='" + cpf_id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
+

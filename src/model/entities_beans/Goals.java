@@ -8,14 +8,14 @@ public class Goals implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Double weightGoals;
-    private Float litersGoals;
+    private Double litersGoals;
     private Double exercisesGoalCals;
     private Double foodGoalCals;
 
     public Goals() {
     }
 
-    public Goals(Double weightGoals, Float litersGoals, Double exercisesGoalCals, Double foodGoalCals) {
+    public Goals(Double weightGoals, Double litersGoals, Double exercisesGoalCals, Double foodGoalCals) {
         this.weightGoals = weightGoals;
         this.litersGoals = litersGoals;
         this.exercisesGoalCals = exercisesGoalCals;
@@ -30,11 +30,11 @@ public class Goals implements Serializable {
         this.weightGoals = weightGoals;
     }
 
-    public Float getLitersGoals() {
+    public Double getLitersGoals() {
         return litersGoals;
     }
 
-    public void setLitersGoals(Float litersGoals) {
+    public void setLitersGoals(Double litersGoals) {
         this.litersGoals = litersGoals;
     }
 

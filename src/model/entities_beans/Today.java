@@ -8,20 +8,20 @@ package model.entities_beans;
  */
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.util.Date;
 
 public class Today implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Double weightDay;
-    private Calendar day;
+    private Date day;
     private Double currentImc;
 
     public Today() {
     }
 
-    public Today(Double weightDay, Calendar day) {
+    public Today(Double weightDay, Date day) {
         this.weightDay = weightDay;
         this.day = day;
     }
@@ -34,11 +34,11 @@ public class Today implements Serializable {
         this.weightDay = weightDay;
     }
 
-    public Calendar getDay() {
+    public Date getDay() {
         return day;
     }
 
-    public void setDay(Calendar day) {
+    public void setDay(Date day) {
         this.day = day;
     }
 

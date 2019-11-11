@@ -6,10 +6,10 @@ window.onload = function () {
     let i;
 
     botao.onclick = function () {
-        for (i = 0; i < qtdFields; i++) {
-            fields[i].disabled = true;
-            //TODO enviar dados para o servidor
-        }
+        setTimeout(function () {
+            for (i = 0; i < qtdFields; i++) {
+                fields[i].disabled = true;}
+        }, 500);
     };
 
     $("#update").click(function () {

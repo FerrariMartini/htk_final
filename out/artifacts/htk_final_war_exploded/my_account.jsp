@@ -12,22 +12,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<!--Descrevendo a aplicação web para google-->
 	<meta name="description" content="Monitoramento inteligente da sua saúde.">
-	<!--refeenciando a biblioteca BootStrap-->
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
-	<!--	Determinando uma Font padrão-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-	<!--	 Fonte da Logo Health Track-->
-	<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
-
-	<!-- referenciando o arquivo CSS customizado -->
-	<link rel="stylesheet" href="css_customized/customizedAll.css" title="estilo principal">
-
-	<!--referenciando scripts-->
-	<script src="js/jquery-3.4.1.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/my_account.js"></script>
+	<%@include file="header.jsp" %>
 
 	<title>Health Track - Meus Dados</title>
 
@@ -36,46 +21,7 @@
 <body>
 <div class="container-fluid">
 	<header>
-		<nav class="navbar navbar-expand-sm fixed-top navbar-light">
-
-			<div class="container align-items-center">
-
-				<div class="brand_container">
-					<a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
-				</div>
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
-				        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="container">
-					<div id="menu" class="collapse navbar-collapse justify-content-end">
-						<ul class="nav nav-pills">
-							<li class="nav-item">
-								<a class="nav-link" href="dashboard.jsp">Resumo da minha Saúde</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="my_day_page.jsp">Meu Dia</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link active" href="my_account.jsp">Meus Dados</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="goals.jsp">Minhas Metas</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link " href="login_page.jsp">Sair</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
+		<%@include file="menu_logado.jsp"%>
 	</header>
 
 	<!--Sessão de form-->
@@ -262,5 +208,8 @@
 		</div>
 	</main>
 </div>
+<script src="js/jquery-3.4.1.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/my_account.js"></script>
 </body>
 </html>

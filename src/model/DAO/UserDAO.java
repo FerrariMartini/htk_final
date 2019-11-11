@@ -6,9 +6,11 @@ import model.entities_beans.User;
 
 public interface UserDAO {
 
-    public void create(User user, EmergencyContact ec) throws DBException;
+    public boolean create(User user, EmergencyContact ec) throws DBException;
 
     public void update(User user) throws DBException;
 
     public void delete(String cpfId, String pwd) throws DBException;
+
+    public String auth(String email) throws DBException;
 }
