@@ -2,13 +2,14 @@ package controller;
 
 import factory.DAOFactory;
 import model.DAO.UserDAO;
-import model.DBException.DBException;
+import model.entities_beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/Logar")
@@ -27,21 +28,30 @@ public class LoginServlet extends HttpServlet {
 
         try {
             //Dados do request recuperados do frontend
-            String login = request.getParameter("login");
+            String email = request.getParameter("login");
             String pwd = request.getParameter("pwd");
 
-            //Dados da query do DB via DAO
-            String loginDAO = dao.auth(login);
-            String pwdDAO = "Ap420069";
+            //Recupera USER do DB pela validacao do email
+            User loggedUser = dao.read(email, pwd);
 
-            if (login.equals(loginDAO) && pwd.equals(pwdDAO)) {
+            //Dados da query do DB via DAO
+            String loginDAO = loggedUser.getEmail();
+            String pwdDAO = loggedUser.getPwd();
+
+            if (email.equals(loginDAO) && pwd.equals(pwdDAO)) {
                 response.sendRedirect("dashboard.jsp");
+                HttpSession session = request.getSession();
+                session.setAttribute("user", loggedUser);
+
             } else {
                 request.setAttribute("err", "Login ou Senha inválidos. Verifique e tente novamente");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        } catch (DBException | IOException db) {
+        } catch (Exception db) {
             db.printStackTrace();
+            request.setAttribute("err", "Verifique sua conexão de internet ou tente novamente");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+
         }
     }
 }

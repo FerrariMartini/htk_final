@@ -21,11 +21,9 @@ public class Pressure implements Serializable {
 
     }
 
-    public Pressure(int code, int sistolica_mm, int sistolica_hg, Date date) {
-        this.code = code;
+    public Pressure(int sistolica_mm, int sistolica_hg) {
         this.sistolica_mm = sistolica_mm;
         this.sistolica_hg = sistolica_hg;
-        this.date = date;
     }
 
     public int getSistolica_mm() {

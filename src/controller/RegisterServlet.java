@@ -16,17 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
+
 
 @WebServlet("/Cadastrar")
 public class RegisterServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd");
-
+    private SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd ");
     private UserDAO dao;
-
 
     public void init() throws ServletException {
         dao = DAOFactory.getUserDAO();
@@ -34,6 +33,7 @@ public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, NullPointerException {
         boolean sucess = false;
+        int count = 0;
 
         try {
             String id_cpf = req.getParameter("cpf");
@@ -41,7 +41,15 @@ public class RegisterServlet extends HttpServlet {
             String lastName = req.getParameter("lastName");
             String phone = req.getParameter("phone");
             String email = req.getParameter("email");
-            Date birthday = sfd.parse(req.getParameter("birthday"));
+
+            String bt = req.getParameter("birthday");
+
+            System.out.println(bt);
+            Calendar birthday = Calendar.getInstance();
+            System.out.println(birthday);
+            birthday.setTime(sfd.parse(bt));
+            System.out.println(birthday);
+
             char gender = req.getParameter("gender").charAt(0);
             String pwd = req.getParameter("pwd");
             BusinessPlan type = new BusinessPlan(req.getParameter("priceType"));
@@ -66,12 +74,20 @@ public class RegisterServlet extends HttpServlet {
             if (sucess) {
                 resp.sendRedirect("login.jsp");
             } else {
-                req.setAttribute("err", "Esse usuário já está cadastrado. Recupere seu login e senha no botão abaixo");
+                req.setAttribute("err", "Problema ao cadastrar usuário. Se for cadastrado clicar em recuperar senha");
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
 
         } catch (NullPointerException | ParseException | DBException e) {
             e.printStackTrace();
+            count++;
+            if (count == 1) {
+                req.setAttribute("err", "Problema ao cadastrar. Tente novamente por favor.");
+                req.getRequestDispatcher("register_user.jsp").forward(req, resp);
+            } else {
+                req.setAttribute("err", "Temos um problema em nosso sistema. Por favor, entrar em contato pelo telefone");
+                req.getRequestDispatcher("register_user.jsp").forward(req, resp);
+            }
         }
     }
 }

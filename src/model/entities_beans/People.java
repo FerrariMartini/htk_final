@@ -60,4 +60,8 @@ public abstract class People implements Serializable {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

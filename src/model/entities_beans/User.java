@@ -8,6 +8,7 @@ package model.entities_beans;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public final class User extends People implements Serializable {
@@ -16,7 +17,7 @@ public final class User extends People implements Serializable {
 
     public static SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
 
-    private Date birthday;
+    private Calendar birthday;
     private Character gender;
     private String pwd;
     private Double initWeight;
@@ -24,13 +25,8 @@ public final class User extends People implements Serializable {
     private Double initIMC;
     private BusinessPlan type;
 
-
-    public User() {
-
-    }
-
     public User(String id, String name, String lastName, String phone, String email,
-                Date birthday, Character gender, String pwd, Double initWeight, Double initHeight,
+                Calendar birthday, Character gender, String pwd, Double initWeight, Double initHeight,
                 BusinessPlan type) {
         super(id, name, lastName, phone, email);
         this.birthday = birthday;
@@ -43,7 +39,7 @@ public final class User extends People implements Serializable {
 
     }
 
-    public Date getBirthday() {
+    public Calendar getBirthday() {
         return birthday;
     }
 
@@ -91,7 +87,7 @@ public final class User extends People implements Serializable {
     }*/
 
     public String getType() {
-        return type.toString();
+        return type.getType();
     }
 
     public void setType(BusinessPlan type) {
@@ -105,7 +101,9 @@ public final class User extends People implements Serializable {
      * @return: deve retornar um valor float que é o IMC e adicionar na variável initIMC;
      */
     private double evaluateImc(double initWeight, double initHeight) {
-        return initWeight / (initHeight * initHeight);
+        double imc = initWeight / (initHeight * initHeight);
+
+        return imc;
     }
 
     @Override

@@ -6,6 +6,7 @@ package model.DAO.impl; /**
  */
 
 import model.DAO.PressureDAO;
+import model.DBException.DBException;
 import model.db_connection_singleton.DBConnectManager;
 import model.entities_beans.Pressure;
 
@@ -24,7 +25,9 @@ public class OraclePressureDAO implements PressureDAO {
      * @param: será necessário passar o objeto pressão arterial aferida.
      */
     @Override
-    public void create(Pressure pressure) {
+    public boolean create(Pressure pressure, java.util.Date today) throws DBException {
+
+        boolean isCreate = false;
 
         try {
             connection = DBConnectManager.getConnection();
@@ -33,22 +36,32 @@ public class OraclePressureDAO implements PressureDAO {
 
             stmt = connection.prepareStatement(sql);
 
-            stmt.setDate(1, (Date) pressure.getDate());
+            stmt.setDate(1, (Date) today);
             stmt.setInt(2, pressure.getSistolica_mm());
             stmt.setInt(3, pressure.getSistolica_hg());
 
             stmt.executeUpdate();
 
+            isCreate = true;
+
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
+            throw new DBException("Erro ao cadastrar nova pressão");
+
+        } catch (Exception ge){
+            ge.printStackTrace();
+            System.out.println("Mensagem do CREATE " + ge.getMessage());
+        }
+        finally {
             try {
-                connection.close();
                 stmt.close();
+                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+
+        return isCreate;
     }
 
     /**
@@ -75,7 +88,7 @@ public class OraclePressureDAO implements PressureDAO {
                 int sis_mm = rs.getInt("Sistólica mm");
                 int sis_hg = rs.getInt("Sistólica hg");
 
-                Pressure pressure = new Pressure(code, sis_mm, sis_hg, data);
+                Pressure pressure = new Pressure(sis_mm, sis_hg);
 
                 pressureList.add(pressure);
             }

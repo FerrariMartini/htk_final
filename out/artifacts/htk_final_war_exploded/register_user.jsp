@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -30,6 +31,9 @@
         <div class="container register_title">
             <h1>Bem vindo ao<span class="logoHTK">&nbsp;Health Track</span></h1>
         </div>
+        <c:if test="${not empty err}">
+            <div class="alert alert-danger text-center">${err}</div>
+        </c:if>
         <form action="Cadastrar" method="post">
             <div class="row justify-content-center">
                 <div class="card register-card-container">

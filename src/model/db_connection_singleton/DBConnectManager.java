@@ -18,7 +18,6 @@ public class DBConnectManager {
         return dbConnectManager;
     }
 
-
     public static Connection getConnection() {
 
         Connection connection = null;
@@ -30,7 +29,7 @@ public class DBConnectManager {
             //Abre a conexão - a classe Connection é a interface do JDBC que representa a conexão com o DB. Passamos por parâmetro URL, LOGIN e SENHA de acesso.
             // a URL é definida pelo fabriante do SGDB.
             connection = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
-                    "htrack2019", "fiap02092019");
+                    "RM81902", "120983");
 
             System.out.println("Conectado");
 
@@ -45,29 +44,3 @@ public class DBConnectManager {
         return connection;
     }
 }
-
-/*
-    public Connection getConnection() {
-        Connection connection = null;
-
-        try {
-         Class.forName("oracle.jdbc.driver.OracleDriver");
-
-                                                  jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
-        connection = DriverManager.getConnection("jdbc:oracle:thin:@oracle.192.321.32.32:1521:ORCL",
-                    "MEU RM", "SENHA");
-
-            System.out.println("Conectado");
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("O Drive JDBC não foi encontrado");
-            e.printStackTrace();
-        } catch (SQLException e) {
-            System.err.println("Não foi possível se conectar ao DB");
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
-}
-*/

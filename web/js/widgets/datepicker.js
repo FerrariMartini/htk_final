@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
     $("#current_date").datepicker({
+        altField: "getDate",
         dateFormat: 'dd/mm/yy',
         dayNames:
             ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
@@ -10,5 +12,5 @@ $(document).ready(function () {
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
         nextText: 'Próximo',
         prevText: 'Anterior',
-    })
+    }).datepicker("setDate", new Date());
 });

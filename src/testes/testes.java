@@ -1,16 +1,36 @@
 package testes;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
-
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class testes {
 
     public static void main(String[] args) {
 
+         SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
+
+            String data = "12-09-1983";
+
+            Date hoje = sfd.parse(data);
+
+            System.out.println(hoje);
+
+
+
+
+
+
+
+            String id = "22566738807";
+
+            Long id2 = Long.parseLong(id);
+
+            System.out.println(id2);
+
 
             Locale lcBRL = new Locale("pt", "BR");
             Locale lcUS = new Locale("en", "US");
@@ -28,9 +48,9 @@ public class testes {
             Double brl4 = (Double) brl3;
 
             System.out.println("BRL3" + " " + brl3);
-            System.out.println("BRL3" + " " +  brl3);
+            System.out.println("BRL3" + " " + brl3);
 
-            if(brl3 instanceof Double){
+            if (brl3 instanceof Double) {
                 System.out.println("é um double");
 
             }

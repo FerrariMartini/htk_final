@@ -1,13 +1,8 @@
 package factory;
 
-import model.DAO.GoalsDAO;
-import model.DAO.PressureDAO;
-import model.DAO.TodayDAO;
-import model.DAO.UserDAO;
-import model.DAO.impl.OracleGoalsDAO;
-import model.DAO.impl.OraclePressureDAO;
-import model.DAO.impl.OracleTodayDAO;
-import model.DAO.impl.OracleUserDAO;
+import model.DAO.*;
+import model.DAO.impl.*;
+import model.entities_beans.EatHabits;
 
 public class DAOFactory {
 
@@ -23,7 +18,19 @@ public class DAOFactory {
         return new OracleGoalsDAO();
     }
 
-    public static TodayDAO getTodayDAO() {
-        return new OracleTodayDAO();
+    public static WeightTodayDAO getWeightTodayDAO() {
+        return new OracleWeightTodayDAO();
     }
+
+    public static ExercisesDAO getExercisesDAO() {
+        return new OracleExercisesDAO();
+    }
+
+    public static HydrationDAO getHydraDAO() {
+        return new OracleHydrationDAO();
+    }
+
+    public static EatHabitsDAO getEatHabitsDAO(){ return new OracleEatHabitsDAO();}
+
+
 }

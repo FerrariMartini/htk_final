@@ -10,6 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Java EE 6-Java EE 6" />
           <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="library" level="project" name="ojdbc8-full" />
         </element>
       </element>
     </root>
