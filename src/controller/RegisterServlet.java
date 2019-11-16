@@ -37,18 +37,16 @@ public class RegisterServlet extends HttpServlet {
 
         try {
             String id_cpf = req.getParameter("cpf");
+            long cpfID = Long.parseLong(id_cpf);
             String firstName = req.getParameter("name");
             String lastName = req.getParameter("lastName");
             String phone = req.getParameter("phone");
             String email = req.getParameter("email");
 
             String bt = req.getParameter("birthday");
-
-            System.out.println(bt);
             Calendar birthday = Calendar.getInstance();
-            System.out.println(birthday);
             birthday.setTime(sfd.parse(bt));
-            System.out.println(birthday);
+
 
             char gender = req.getParameter("gender").charAt(0);
             String pwd = req.getParameter("pwd");
@@ -56,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
             Double initWeight = Double.parseDouble(req.getParameter("weight").replace(",", "."));
             Double initHeight = Double.parseDouble(req.getParameter("height").replace(",", "."));
 
-            User newUser = new User(id_cpf, firstName, lastName, phone, email, birthday, gender, pwd, initWeight, initHeight, type);
+            User newUser = new User(cpfID, firstName, lastName, phone, email, birthday, gender, pwd, initWeight, initHeight, type);
 
             String emName = req.getParameter("emName");
             String emLastName = req.getParameter("emLastName");
@@ -64,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
             String emEmail = req.getParameter("emEmail");
             String emkinship = req.getParameter("kinship");
 
-            EmergencyContact newEmeContact = new EmergencyContact(newUser.getCpf_id(), emName, emLastName, emPhone, emEmail, emkinship);
+            EmergencyContact newEmeContact = new EmergencyContact(0L, emName, emLastName, emPhone, emEmail, emkinship);
 
             System.out.println(newUser.toString());
             System.out.println(newEmeContact.toString());

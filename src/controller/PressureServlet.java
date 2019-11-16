@@ -4,6 +4,7 @@ import factory.DAOFactory;
 import model.DAO.PressureDAO;
 import model.DBException.DBException;
 import model.entities_beans.Pressure;
+import model.entities_beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 @WebServlet("/Pressao")
 public class PressureServlet extends HttpServlet {
@@ -29,13 +30,11 @@ public class PressureServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-
+            HttpSession session = req.getSession();
+            User loggedUser = (User) session.getAttribute("user");
             String dateToday = req.getParameter("dateToday");
-
-            System.out.println("dia de hoje é " + dateToday);
-
-            java.sql.Date dt = new java.sql.Date(sfd.parse(dateToday).getTime());
-
+            Calendar dt = Calendar.getInstance();
+            dt.setTime(sfd.parse(dateToday));
 
             String bloodPressure = req.getParameter("blood_pressure");
 
@@ -52,14 +51,13 @@ public class PressureServlet extends HttpServlet {
 
             if (dateToday == null) {
                 req.setAttribute("err", "É necessário informar a data de hoje.");
-            }
+            } else {
+                Pressure newPressure = new Pressure(0, mmPressure, hgPressure, dt);
+                boolean sucess = daoPressure.create(newPressure, loggedUser.getCpf_id().toString());
 
-            Pressure newPressure = new Pressure(mmPressure, hgPressure);
-
-            boolean sucess = daoPressure.create(newPressure, dt);
-
-            if (sucess) {
-                req.setAttribute("sucess", "Exercicios cadastrados com sucesso");
+                if (sucess) {
+                    req.setAttribute("sucess", "Pressão cadastrada com sucesso :)");
+                }
             }
 
         } catch (DBException | ParseException db) {

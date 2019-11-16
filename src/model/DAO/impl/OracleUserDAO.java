@@ -40,7 +40,7 @@ public class OracleUserDAO implements UserDAO {
 
             stmt = connection.prepareStatement(sql);
 
-            stmt.setString(1, user.getCpf_id());
+            stmt.setLong(1, user.getCpf_id());
             stmt.setString(2, user.getName());
             stmt.setString(3, user.getLastName());
             java.sql.Date birthdayDate = new java.sql.Date(user.getBirthday().getTimeInMillis());
@@ -66,7 +66,7 @@ public class OracleUserDAO implements UserDAO {
             stmt.setString(2, ec.getLastName());
             stmt.setString(3, ec.getKinship());
             stmt.setString(4, ec.getEmail());
-            stmt.setString(5, ec.getCpf_id());
+            stmt.setLong(5, ec.getCpf_id());
             stmt.setString(6, ec.getPhone());
 
             stmt.executeUpdate();
@@ -96,27 +96,29 @@ public class OracleUserDAO implements UserDAO {
      */
     @Override
     public void update(User user) throws DBException {
-
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "UPDATE T_HT_USUARIO SET ds_email=?";
+            sql = "UPDATE T_HT_USUARIO SET ds_email=? WHERE cd_cpf = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, user.getEmail());
+            stmt.setLong(2, user.getCpf_id());
 
             stmt.executeUpdate();
 
 
-            sql = "UPDATE T_HT_TELEFONE SET nr_numero=?";
+            sql = "UPDATE T_HT_TELEFONE SET nr_numero=? WHERE cd_cpf = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, user.getPhone());
+            stmt.setLong(2, user.getCpf_id());
 
             stmt.executeUpdate();
 
 
-            sql = "UPDATE T_HT_PLAN_COMERCIAL SET nm_plano=?";
+            sql = "UPDATE T_HT_PLAN_COMERCIAL SET nm_plano=? WHERE cd_cpf = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, user.getType());
+            stmt.setLong(2, user.getCpf_id());
 
             stmt.executeUpdate();
 
@@ -141,7 +143,7 @@ public class OracleUserDAO implements UserDAO {
      * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
      */
     @Override
-    public void delete(String cpfId, String pwd) throws DBException {
+    public void delete(Long cpfId, String pwd) throws DBException {
         try {
             connection = DBConnectManager.getConnection();
 
@@ -149,7 +151,7 @@ public class OracleUserDAO implements UserDAO {
 
             stmt = connection.prepareStatement(sql);
 
-            stmt.setString(1, cpfId);
+            stmt.setLong(1, cpfId);
             stmt.setString(2, pwd);
 
             stmt.executeUpdate();
@@ -182,7 +184,7 @@ public class OracleUserDAO implements UserDAO {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String idDb = rs.getString("cd_cpf");
+                long idDb = rs.getLong("cd_cpf");
                 String nameDb = rs.getString("nm_nome");
                 String lastNameDb = rs.getString("nm_sobrenome");
                 java.sql.Date dtBirthday = rs.getDate("dt_nascimento");
@@ -200,6 +202,7 @@ public class OracleUserDAO implements UserDAO {
                 BusinessPlan bp = new BusinessPlan(planDb);
 
                 userRead = new User(idDb, nameDb, lastNameDb, phoneDb, emailDb, btdDb, genderDb, pwdDb, weightDb, heightDb, bp);
+
             }
 
         } catch (SQLException e) {

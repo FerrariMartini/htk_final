@@ -13,7 +13,7 @@ public abstract class People implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    protected String cpf_id;
+    protected Long cpf_id;
     protected String name;
     protected String lastName;
     protected String phone;
@@ -23,7 +23,7 @@ public abstract class People implements Serializable {
 
     }
 
-    protected People(String cpf_id, String name, String lastName, String phone, String email) {
+    protected People(Long cpf_id, String name, String lastName, String phone, String email) {
         this.cpf_id = cpf_id;
         this.name = name;
         this.lastName = lastName;
@@ -36,7 +36,7 @@ public abstract class People implements Serializable {
      * para qualquer correção o usuário deverá apagar o cadastro e fazer um novo.
      */
 
-    public String getCpf_id() {
+    public Long getCpf_id() {
         return cpf_id;
     }
 

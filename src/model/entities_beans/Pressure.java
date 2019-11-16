@@ -6,51 +6,53 @@ package model.entities_beans; /**
  */
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Pressure implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int code;
-    private int sistolica_mm;
-    private int sistolica_hg;
-    private Date date;
+    private Integer code;
+    private Integer sistolica_mm;
+    private Integer sistolica_hg;
+    private Calendar day;
 
     public Pressure() {
 
     }
 
-    public Pressure(int sistolica_mm, int sistolica_hg) {
+    public Pressure(Integer code, Integer sistolica_mm, Integer sistolica_hg, Calendar day) {
+        this.code = code;
         this.sistolica_mm = sistolica_mm;
         this.sistolica_hg = sistolica_hg;
+        this.day = day;
     }
 
-    public int getSistolica_mm() {
+    public Integer getCode() {
+        return code;
+    }
+
+    public Integer getSistolica_mm() {
         return sistolica_mm;
     }
 
-    public void setSistolica_mm(int sistolica_mm) {
+    public void setSistolica_mm(Integer sistolica_mm) {
         this.sistolica_mm = sistolica_mm;
     }
 
-    public int getSistolica_hg() {
+    public Integer getSistolica_hg() {
         return sistolica_hg;
     }
 
-    public void setSistolica_hg(int sistolica_hg) {
+    public void setSistolica_hg(Integer sistolica_hg) {
         this.sistolica_hg = sistolica_hg;
     }
 
-    public Date getDate() {
-        return date;
+    public Calendar getDay() {
+        return day;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getCode() {
-        return code;
+    public void setDay(Calendar day) {
+        this.day = day;
     }
 }

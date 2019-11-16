@@ -3,17 +3,17 @@ package model.DAO;
 import model.DBException.DBException;
 import model.entities_beans.Pressure;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 public interface PressureDAO {
 
-    public boolean create(Pressure pressure, Date today) throws DBException;
+    boolean create(Pressure pressure, String cpf_id) throws DBException;
 
-    public List<Pressure> getAll();
+    List<Pressure> read(Calendar date, String cpf_id) throws DBException;
 
-    public void update(Pressure pressure);
+    void update(Pressure pressure) throws DBException;
 
-    public void delete(int code);
-
+    void delete(int code) throws DBException;
 }

@@ -1,9 +1,11 @@
 package model.DAO;
 
 
+import model.entities_beans.EatHabits;
+
 public interface EatHabitsDAO {
 
-    public void create( );
+     boolean create(EatHabits food);
 
     public void getAll();
 

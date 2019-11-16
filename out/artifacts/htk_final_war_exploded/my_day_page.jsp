@@ -23,7 +23,48 @@
 <body>
 <div class="container-fluid">
     <header>
-        <%@include file="menu_logado.jsp" %>
+        <nav class="navbar navbar-expand-sm fixed-top navbar-light">
+
+            <div class="container align-items-center">
+
+                <div class="brand_container">
+                    <a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
+                </div>
+
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler"
+                        data-target="#menu" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="container">
+                    <div class="collapse navbar-collapse justify-content-end" id="menu">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.jsp">Resumo da minha Saúde</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" href="my_day_page.jsp">Meu Dia</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="my_account.jsp">Meus Dados</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="goals.jsp">Minhas Metas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.jsp">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
     </header>
 
     <!--Sessão principal -->
@@ -163,7 +204,8 @@
                                                 <td>
                                                     <div>
                                                         <div>
-                                                            <input type="hidden" class="hidden" id="exercise-Day" name="dateToday"
+                                                            <input type="hidden" class="hidden" id="exercise-Day"
+                                                                   name="dateToday"
                                                                    dataformatas="dd/mm/yyyy">
                                                             <input type="text" class="form-control text-center"
                                                                    id="exerciseField" placeholder="Jogar Futebol"
@@ -217,7 +259,6 @@
                                             &nbsp;Insira aqui suas Refeições no dia:
                                         </div>
                                         <div class="flex-column">&nbsp;13/09/2019 |</div>
-                                        <div class="flex-column">&nbsp;0<span> cal. consumidas</span></div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -258,56 +299,60 @@
                                     <div class="tab-content" id="nav-coffee_breakContent">
                                         <div class="tab-pane fade show active" id="breakfast" role="tabpanel"
                                              aria-labelledby="breakfast_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div>
+                                            <form id="coffee-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="coffeeBrk" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
                                                             <div>
-                                                                <input type="hidden"  class="hidden" id="coffe_brk-Day" name="dateToday"
-                                                                       dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="coffee" placeholder="Café com Leite"
-                                                                       name="coffe_brk" required>
+                                                                <div>
+                                                                    <input type="hidden" class="hidden"
+                                                                           id="coffe_brk-Day" name="dateToday"
+                                                                           dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="coffee" placeholder="Café com Leite"
+                                                                           name="coffe_brk" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao_brk">porções</label>
-                                                            <input type="text" class="form-control" name="porcaoBkf"
-                                                                   id="porcao_brk"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd_brk">quantidade</label>
-                                                            <input type="text" class="form-control" id="qtd_brk"
-                                                                   name="qtdBkf"
-                                                                   placeholder="2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="calorias">calorias</label>
-                                                            <input type="text" class="form-control"
-                                                                   name="caloriesBkf"
-                                                                   id="calorias"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcao_brk">porções</label>
+                                                                <input type="text" class="form-control" name="porcaoBkf"
+                                                                       id="porcao_brk"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtd_brk">quantidade</label>
+                                                                <input type="text" class="form-control" id="qtd_brk"
+                                                                       name="qtdBkf"
+                                                                       placeholder="2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="calorias">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesBkf"
+                                                                       id="calorias"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -315,7 +360,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="coffee-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -323,56 +369,61 @@
                                         <!--Lanche da Manhã-->
                                         <div class="tab-pane fade" id="snack_time" role="tabpanel"
                                              aria-labelledby="snack_time_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div id="food-form">
-                                                            <div>
-                                                                <input type="hidden"  class="hidden" id="snack_time-Day"
-                                                                       name="dateToday" dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="snack" placeholder="Maçã com Canela"
-                                                                       name="snack_time" required>
+                                            <form id="snack-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="snack" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div id="food-form">
+                                                                <div>
+                                                                    <input type="hidden" class="hidden"
+                                                                           id="snack_time-Day"
+                                                                           name="dateToday" dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="snack" placeholder="Maçã com Canela"
+                                                                           name="snack_time" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao<1>">porções</label>
-                                                            <input type="text" class="form-control" name="porcao"
-                                                                   id="porcao<1>"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd<1>">quantidade</label>
-                                                            <input type="text" class="form-control" id="qtd<1>"
-                                                                   name="qtd"
-                                                                   placeholder="2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only"
-                                                                   for="calorias<1>">calorias</label>
-                                                            <input type="text" class="form-control" name="calories"
-                                                                   id="calorias<1>"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcaoSnack">porções</label>
+                                                                <input type="text" class="form-control" name="porcaoSk"
+                                                                       id="porcaoSnack"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtdSnack">quantidade</label>
+                                                                <input type="text" class="form-control" id="qtdSnack"
+                                                                       name="qtdSk"
+                                                                       placeholder="2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only"
+                                                                       for="caloriasSnack">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesSk"
+                                                                       id="caloriasSnack"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -380,7 +431,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="snack-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -388,57 +440,63 @@
                                         <!--Almoço-->
                                         <div class="tab-pane fade" id="lunch" role="tabpanel"
                                              aria-labelledby="lunch_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
+                                            <form id="lunch-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="lunch" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
 
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div id=" asdad">
-                                                            <div>
-                                                                <input type="hidden" class="hidden" id="lunch-Day" name="dateToday"
-                                                                       dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="lunch_time"
-                                                                       placeholder="Macarrão Alho e Óleo com Brócoles"
-                                                                       name="my_lunch" required>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div id=" asdad">
+                                                                <div>
+                                                                    <input type="hidden" class="hidden" id="lunch-Day"
+                                                                           name="dateToday"
+                                                                           dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="lunch_time"
+                                                                           placeholder="Macarrão Alho e Óleo com Brócoles"
+                                                                           name="my_lunch" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao5">porções</label>
-                                                            <input type="text" class="form-control" name="porcao"
-                                                                   id="porcao5"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd5">quantidade</label>
-                                                            <input type="text" class="form-control" name="qtd"
-                                                                   id="qtd5"
-                                                                   placeholder="2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="calorias5">calorias</label>
-                                                            <input type="text" class="form-control" name="calories"
-                                                                   id="calorias5"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcao_Lch">porções</label>
+                                                                <input type="text" class="form-control" name="porcaoLhc"
+                                                                       id="porcao_Lch"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtd_Lhc">quantidade</label>
+                                                                <input type="text" class="form-control" name="qtdLhc"
+                                                                       id="qtd_Lhc"
+                                                                       placeholder="2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only"
+                                                                       for="calorias_Lhc">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesLhc"
+                                                                       id="calorias_Lhc"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -446,7 +504,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="lunch-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -454,56 +513,63 @@
                                         <!--Lanche da Tarde-->
                                         <div class="tab-pane fade" id="tea_time" role="tabpanel"
                                              aria-labelledby="tea_time_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
+                                            <form id="tea-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="tea" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
 
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
                                                             <div>
-                                                                <input type="hidden" class="hidden" id="tea-Day" name="dateToday"
-                                                                       dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="eat_time" placeholder="Iogurte com Granola"
-                                                                       name="my_eat" required>
+                                                                <div>
+                                                                    <input type="hidden" class="hidden" id="tea-Day"
+                                                                           name="dateToday"
+                                                                           dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="eat_time"
+                                                                           placeholder="Iogurte com Granola"
+                                                                           name="my_tea" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao6">porções</label>
-                                                            <input type="text" class="form-control" name="porcao"
-                                                                   id="porcao6"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd6">quantidade</label>
-                                                            <input type="text" class="form-control" name="qtd"
-                                                                   id="qtd6"
-                                                                   placeholder="2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="calorias6">calorias</label>
-                                                            <input type="text" class="form-control" name="calories"
-                                                                   id="calorias6"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcao_Tea">porções</label>
+                                                                <input type="text" class="form-control" name="porcaoTea"
+                                                                       id="porcao_Tea"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtd_Tea">quantidade</label>
+                                                                <input type="text" class="form-control" name="qtdTea"
+                                                                       id="qtd_Tea"
+                                                                       placeholder="2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only"
+                                                                       for="calorias_Tea">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesTea"
+                                                                       id="calorias_Tea"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -511,7 +577,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="tea-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -519,56 +586,62 @@
                                         <!--Jantar-->
                                         <div class="tab-pane fade" id="dinner" role="tabpanel"
                                              aria-labelledby="dinner_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div>
+                                            <form id="dinner-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="dinner" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
                                                             <div>
-                                                                <input type="hidden" class="hidden" id="dinner-Day" name="dateToday"
-                                                                       dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="dinner_time"
-                                                                       placeholder="Pizza Mussarela e Aliche"
-                                                                       name="my_dinner" required>
+                                                                <div>
+                                                                    <input type="hidden" class="hidden" id="dinner-Day"
+                                                                           name="dateToday"
+                                                                           dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="dinner_time"
+                                                                           placeholder="Pizza Mussarela e Aliche"
+                                                                           name="my_dinner" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao7">porções</label>
-                                                            <input type="text" class="form-control" name="porcao"
-                                                                   id="porcao7"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd7">quantidade</label>
-                                                            <input type="text" class="form-control" id="qtd7"
-                                                                   name="qtd"
-                                                                   placeholder="2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="calorias7">calorias</label>
-                                                            <input type="text" class="form-control" name="calories"
-                                                                   id="calorias7"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcao_Dnr">porções</label>
+                                                                <input type="text" class="form-control" name="porcaoDnr"
+                                                                       id="porcao_Dnr"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtd_Dnr">quantidade</label>
+                                                                <input type="text" class="form-control" id="qtd_Dnr"
+                                                                       name="qtdDnr"
+                                                                       placeholder="2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only"
+                                                                       for="calorias_Dnr">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesDnr"
+                                                                       id="calorias_Dnr"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -576,7 +649,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="dinner-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -584,55 +658,62 @@
                                         <!--CEIA-->
                                         <div class="tab-pane fade" id="ceia" role="tabpanel"
                                              aria-labelledby="ceia_tab">
-                                            <table class="table table-borderless table-responsive-lg">
-                                                <thead>
-                                                <tr>
-                                                    <th>Alimento</th>
-                                                    <th>Porção (gramas)</th>
-                                                    <th>Quantidade (unit.)</th>
-                                                    <th>Calorias (kcal)</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div>
+                                            <form id="ceia-form" action="Alimentos" method="get">
+                                                <input type="hidden" value="ceia" name="typeFood">
+                                                <table class="table table-borderless table-responsive-lg">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Alimento</th>
+                                                        <th>Porção (gramas)</th>
+                                                        <th>Quantidade (unit.)</th>
+                                                        <th>Calorias (kcal)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
                                                             <div>
-                                                                <input type="hidden" class="hidden" id="ceia-Day" name="dateToday"
-                                                                       dataformatas="dd/mm/yyyy">
-                                                                <input type="text" class="form-control text-center"
-                                                                       id="ceia_time" placeholder="Frutas Secas"
-                                                                       name="my_ceia" required>
+                                                                <div>
+                                                                    <input type="hidden" class="hidden" id="ceia-Day"
+                                                                           name="dateToday"
+                                                                           dataformatas="dd/mm/yyyy">
+                                                                    <input type="text" class="form-control text-center"
+                                                                           id="ceia_time" placeholder="Frutas Secas"
+                                                                           name="my_ceia" required>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="porcao8">porções</label>
-                                                            <input type="text" class="form-control" name="porcao"
-                                                                   id="porcao8"
-                                                                   placeholder="100" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="qtd8">quantidade</label>
-                                                            <input type="text" class="form-control" id="qtd8"
-                                                                   name="qtd"
-                                                                   placeholder=" 2" required>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <label class="sr-only" for="calorias8">calorias</label>
-                                                            <input type="text" class="form-control" name="calories"
-                                                                   id="calorias8"
-                                                                   placeholder="689" required>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="porcao_Ceia">porções</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="porcaoCeia"
+                                                                       id="porcao_Ceia"
+                                                                       placeholder="100" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only" for="qtd_Ceia">quantidade</label>
+                                                                <input type="text" class="form-control" id="qtd_Ceia"
+                                                                       name="qtdCeia"
+                                                                       placeholder=" 2" required>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="sr-only"
+                                                                       for="calorias_Ceia">calorias</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="caloriesCeia"
+                                                                       id="calorias_Ceia"
+                                                                       placeholder="689" required>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </form>
                                             <div class="card-footer card_footer_my_day">
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">add_circle_outline</i>
@@ -640,7 +721,8 @@
                                                 <button type="button" class="btn btn-sm">
                                                     <i class="material-icons md20 icon_gray">remove_circle_outline</i>
                                                 </button>
-                                                <button type="submit" class="btn btn-success btn-sm">SALVAR
+                                                <button type="submit" form="ceia-form" class="btn btn-success btn-sm">
+                                                    SALVAR
                                                 </button>
                                             </div>
                                         </div>
@@ -667,6 +749,8 @@
                                         <form id="pressure-form" class="row justify-content-center" action="Pressao"
                                               method="get">
                                             <div class="form-group col-auto">
+                                                <input type="hidden" class="hidden" id="pressure-Day" name="dateToday"
+                                                       dataformatas="dd/mm/yyyy">
                                                 <input type="text" class="form-control text-center"
                                                        id="blood_pressure" name="blood_pressure"
                                                        aria-describedby="bloodPressure" placeholder="14/8"
@@ -707,6 +791,8 @@
                                     <div>
                                         <form id="hydra-form" class="row justify-content-center" action="Hidratar"
                                               method="get">
+                                            <input type="hidden" class="hidden" id="hydra-Day" name="dateToday"
+                                                   dataformatas="dd/mm/yyyy">
                                             <div class="form-group col-auto">
                                                 <label for="kind_hydration">Tipo embalagem</label>
                                                 <select id="kind_hydration" class="custom-select" name="hydra_option">

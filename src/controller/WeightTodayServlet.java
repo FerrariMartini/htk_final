@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 @WebServlet("/CadastraPeso")
 public class WeightTodayServlet extends HttpServlet {
@@ -34,19 +35,20 @@ public class WeightTodayServlet extends HttpServlet {
             User loggedUser = (User) session.getAttribute("user");
 
             String dateToday = req.getParameter("dateToday");
+            Calendar dt = Calendar.getInstance();
+            dt.setTime(sfd.parse(dateToday));
 
-            System.out.println("dia de hoje é " + dateToday);
-
-            java.sql.Date dt = new java.sql.Date(sfd.parse(dateToday).getTime());
 
             double weightToday = Double.parseDouble(req.getParameter("weightToday").replace(",", "."));
 
             System.out.println("dia de hoje é " + dateToday);
             System.out.println("peso de hoje é " + weightToday);
 
-            WeightToday newWeightToday = new WeightToday(weightToday, dt, currentImc(loggedUser.getInitHeight(), weightToday));
+//            WeightToday newWeightToday = new WeightToday(weightToday, dt, currentImc(loggedUser.getInitHeight(), weightToday));
+            WeightToday newWeightToday = new WeightToday(0, weightToday, dt, currentImc(1.78, weightToday));
 
-            boolean sucess = daoWeight.create(newWeightToday);
+
+            boolean sucess = daoWeight.create(newWeightToday, loggedUser.getCpf_id());
 
             if (sucess) {
                 req.setAttribute("sucess", "Peso salvo! Continue o preenchimento");

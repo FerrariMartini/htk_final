@@ -7,50 +7,40 @@ public class Goals implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Double weightGoals;
-    private Double litersGoals;
-    private Double exercisesGoalCals;
-    private Double foodGoalCals;
+    private Integer code;
+    private String descptGoal;
+    private Double qtdGoal;
 
     public Goals() {
     }
 
-    public Goals(Double weightGoals, Double litersGoals, Double exercisesGoalCals, Double foodGoalCals) {
-        this.weightGoals = weightGoals;
-        this.litersGoals = litersGoals;
-        this.exercisesGoalCals = exercisesGoalCals;
-        this.foodGoalCals = foodGoalCals;
+    public Goals(Integer code, String descptGoal, Double qtdGoal) {
+        this.code = code;
+        this.descptGoal = descptGoal;
+        this.qtdGoal = qtdGoal;
     }
 
-    public Double getWeightGoals() {
-        return weightGoals;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setWeightGoals(Double weightGoals) {
-        this.weightGoals = weightGoals;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
-    public Double getLitersGoals() {
-        return litersGoals;
+    public String getDescptGoal() {
+        return descptGoal;
     }
 
-    public void setLitersGoals(Double litersGoals) {
-        this.litersGoals = litersGoals;
+    public void setDescptGoal(String descptGoal) {
+        this.descptGoal = descptGoal;
     }
 
-    public Double getExercisesGoalCals() {
-        return exercisesGoalCals;
+    public Double getQtdGoal() {
+        return qtdGoal;
     }
 
-    public void setExercisesGoalCals(Double exercisesGoalCals) {
-        this.exercisesGoalCals = exercisesGoalCals;
-    }
-
-    public Double getFoodGoalCals() {
-        return foodGoalCals;
-    }
-
-    public void setFoodGoalCals(Double foodGoalCals) {
-        this.foodGoalCals = foodGoalCals;
+    public void setQtdGoal(Double qtdGoal) {
+        this.qtdGoal = qtdGoal;
     }
 }

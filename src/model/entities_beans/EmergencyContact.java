@@ -13,7 +13,7 @@ public final class EmergencyContact extends People {
     public EmergencyContact() {
     }
 
-    public EmergencyContact(String id, String name, String lastName, String phone, String email, String kinship) {
+    public EmergencyContact(Long id, String name, String lastName, String phone, String email, String kinship) {
         super(id, name, lastName, phone, email);
         this.kinship = kinship;
     }

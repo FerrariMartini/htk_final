@@ -15,8 +15,6 @@ public final class User extends People implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
-
     private Calendar birthday;
     private Character gender;
     private String pwd;
@@ -25,7 +23,7 @@ public final class User extends People implements Serializable {
     private Double initIMC;
     private BusinessPlan type;
 
-    public User(String id, String name, String lastName, String phone, String email,
+    public User(Long id, String name, String lastName, String phone, String email,
                 Calendar birthday, Character gender, String pwd, Double initWeight, Double initHeight,
                 BusinessPlan type) {
         super(id, name, lastName, phone, email);
@@ -102,7 +100,6 @@ public final class User extends People implements Serializable {
      */
     private double evaluateImc(double initWeight, double initHeight) {
         double imc = initWeight / (initHeight * initHeight);
-
         return imc;
     }
 

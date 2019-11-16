@@ -12,5 +12,5 @@ public interface UserDAO {
 
     void update(User user) throws DBException;
 
-    void delete(String cpfId, String pwd) throws DBException;
+    void delete(Long cpfId, String pwd) throws DBException;
 }

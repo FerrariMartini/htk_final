@@ -1,6 +1,7 @@
 package model.entities_beans;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -14,19 +15,25 @@ public class Exercises implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private Integer code;
     private String exercises;
-    private String time;
+    private Calendar time;
     private Float calories;
-
+    private Calendar day;
 
     public Exercises() {
-
     }
 
-    public Exercises(String exercises, String time, Float calories) {
+    public Exercises(Integer code, String exercises, Calendar time, Float calories, Calendar day) {
+        this.code = code;
         this.exercises = exercises;
         this.time = time;
         this.calories = calories;
+        this.day = day;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 
     public String getExercises() {
@@ -37,11 +44,11 @@ public class Exercises implements Serializable {
         this.exercises = exercises;
     }
 
-    public String getTime() {
+    public Calendar getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Calendar time) {
         this.time = time;
     }
 
@@ -53,27 +60,12 @@ public class Exercises implements Serializable {
         this.calories = calories;
     }
 
-    /**
-     * Salvar os dados dos exercícios no BD,
-     *
-     * @param: uma lista com os dados de todas os exercicios realizadas.
-     * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
-     */
-    public boolean save(List<String> exercisesList) {
-        boolean isSave = false;
-
-        return isSave;
+    public Calendar getDay() {
+        return day;
     }
 
-    /**
-     * Deletar a refeicão do BD,
-     *
-     * @param: index para indicar qual o exercício da lista será removido.
-     * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
-     */
-    public boolean delete(int index) {
-        boolean isDelete = false;
-        return isDelete;
+    public void setDay(Calendar day) {
+        this.day = day;
     }
 }
 

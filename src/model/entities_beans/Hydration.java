@@ -31,16 +31,8 @@ public class Hydration implements Serializable {
         this.qtd = qtd;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Calendar getData() {

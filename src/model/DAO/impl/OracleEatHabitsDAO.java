@@ -1,12 +1,13 @@
 package model.DAO.impl;
 
 import model.DAO.EatHabitsDAO;
+import model.entities_beans.EatHabits;
 
 public class OracleEatHabitsDAO implements EatHabitsDAO {
 
     @Override
-    public void create() {
-
+    public boolean create(EatHabits food) {
+        return true;
     }
 
     @Override

@@ -3,6 +3,7 @@ package controller;
 import factory.DAOFactory;
 import model.DAO.HydrationDAO;
 import model.entities_beans.Hydration;
+import model.entities_beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 @WebServlet("/Hidratar")
@@ -28,24 +30,22 @@ public class HydraServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        //TODO - montar um Script para calcular a quantidade da água automaticamente
         try {
+            HttpSession session = req.getSession();
+            User loggedUser = (User) session.getAttribute("user");
 
             String dateToday = req.getParameter("dateToday");
-
-            System.out.println("dia de hoje é " + dateToday);
-
-            java.sql.Date dt = new java.sql.Date(sfd.parse(dateToday).getTime());
+            Calendar dt = Calendar.getInstance();
+            dt.setTime(sfd.parse(dateToday));
 
             String hydraOption = req.getParameter("hydra_option");
+
             String unitHydra = req.getParameter("unit_hydra");
+            float unit = Float.parseFloat(unitHydra);
+
             String qtdHydra = req.getParameter("qtd_hydra");
-
-            System.out.println(hydraOption);
-            System.out.println(qtdHydra);
-            System.out.println(unitHydra);
-            System.out.println(dt);
-
-            Float qtd = Float.parseFloat(qtdHydra);
+            float qtd = Float.parseFloat(qtdHydra);
 
             System.out.println(qtd);
 
@@ -54,9 +54,9 @@ public class HydraServlet extends HttpServlet {
                 req.setAttribute("err", "É necessário informar a data de hoje.");
             }
 
-            Hydration newHydra = new Hydration();
+            Hydration newHydra = new Hydration(0, dt, hydraOption, unit, qtd);
 
-            boolean sucess = daoHydra.create(newHydra);
+            boolean sucess = daoHydra.create(newHydra, loggedUser.getCpf_id());
 
             if (sucess) {
                 req.setAttribute("sucess", "Hidratação cadastradas com sucesso");

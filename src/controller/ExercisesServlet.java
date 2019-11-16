@@ -3,14 +3,17 @@ package controller;
 import factory.DAOFactory;
 import model.DAO.ExercisesDAO;
 import model.entities_beans.Exercises;
+import model.entities_beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 @WebServlet("/Exercicios")
@@ -20,7 +23,7 @@ public class ExercisesServlet extends HttpServlet {
     private ExercisesDAO daoExe;
     private boolean sucess = false;
     private SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
-
+    private SimpleDateFormat sfd2 = new SimpleDateFormat("dd/MM/yyyy HH:MM:ss");
 
     public void init() {
         daoExe = DAOFactory.getExercisesDAO();
@@ -30,15 +33,20 @@ public class ExercisesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
+            HttpSession session = req.getSession();
+            User loggedUser = (User) session.getAttribute("user");
+
             String dateToday = req.getParameter("dateToday");
-
-            System.out.println("dia de hoje é " + dateToday);
-
-            java.sql.Date dt = new java.sql.Date(sfd.parse(dateToday).getTime());
+            Calendar dt = Calendar.getInstance();
+            dt.setTime(sfd.parse(dateToday));
 
             String exerType = req.getParameter("exercise");
+
             String time = req.getParameter("time");
-            Float exerCalories = Float.parseFloat(req.getParameter("exer_calories"));
+            Calendar tm = Calendar.getInstance();
+            tm.setTime(sfd2.parse(time));
+
+            float exerCalories = Float.parseFloat(req.getParameter("exer_calories"));
 
             System.out.println("tipo " + exerType);
             System.out.println("tempo " + time);
@@ -48,8 +56,8 @@ public class ExercisesServlet extends HttpServlet {
             if (dateToday == null) {
                 req.setAttribute("err", "É necessário informar a data de hoje.");
             } else {
-                Exercises newExercise = new Exercises(exerType, time, exerCalories);
-                sucess = daoExe.create(newExercise, dt);
+                Exercises newExercise = new Exercises(0, exerType, tm, exerCalories, dt);
+                sucess = daoExe.create(newExercise, loggedUser.getCpf_id());
             }
 
             if (sucess) {
