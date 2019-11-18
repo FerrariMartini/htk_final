@@ -132,6 +132,7 @@ h1 {
 }
 
 @media screen and (max-width: 425px) {
+
     .tip_text {
         justify-content: center;
     }

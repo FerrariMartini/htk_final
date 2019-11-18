@@ -73,10 +73,11 @@ public class OracleWeightTodayDAO implements WeightTodayDAO {
 
             ResultSet rs = stmt.executeQuery();
 
+
             if (rs.next()) {
                 int code = rs.getInt("CD_CODE");
-                double weight = rs.getDouble("VL_PESO_DIA");
                 double imc = rs.getDouble("VL_IMC_ATUAL");
+                double weight = rs.getDouble("VL_PESO_DIA");
                 java.sql.Date day = rs.getDate("DT_DIA");
                 Calendar weightDay = Calendar.getInstance();
                 weightDay.setTimeInMillis(day.getTime());

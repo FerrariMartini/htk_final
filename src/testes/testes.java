@@ -1,7 +1,10 @@
 package testes;
 
+import util.CriptografiaUtil;
+
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -9,28 +12,64 @@ public class testes {
 
     public static void main(String[] args) {
 
-         SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd");
+         SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
 
         try {
 
-            String data = "12-09-1983";
 
-            Date hoje = sfd.parse(data);
+            Date newDate = new Date();
 
-            System.out.println(hoje);
+            System.out.println(newDate);
+
+            String dt = sfd.format(newDate);
+
+            System.out.println(dt);
+
+            Calendar d = Calendar.getInstance();
+            d.setTime(sfd.parse(dt));
+
+            System.out.println(d);
 
 
 
 
 
 
+            String pwdFront = "Ap420069";
 
-            String id = "22566738807";
+            pwdFront = CriptografiaUtil.criptografar(pwdFront);
 
-            Long id2 = Long.parseLong(id);
+            System.out.println(pwdFront);
 
-            System.out.println(id2);
+            String pwdDBCript = "e0283c25bcfaaaf1659aefdf80c97f1d";
 
+            String pwdFront2 = CriptografiaUtil.criptografar(pwdFront);
+
+            System.out.println(pwdFront2);
+
+
+
+
+
+
+//            String data = "12-09-1983";
+//
+//            Date hoje = sfd.parse(data);
+//
+//            System.out.println(hoje);
+//
+//
+
+
+
+//
+//
+//            String id = "22566738807";
+//
+//            Long id2 = Long.parseLong(id);
+//
+//            System.out.println(id2);
+//
 
             Locale lcBRL = new Locale("pt", "BR");
             Locale lcUS = new Locale("en", "US");

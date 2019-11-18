@@ -24,14 +24,14 @@ public class OracleGoalsDAO implements GoalsDAO {
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "INSERT INTO T_HT_META (CD_META, DS_META, VL_CONSUMO_CALORIAS) VALUES (SQ_META.NEXTVAL, ? ,?)";
+            sql = "INSERT INTO T_HT_META (CD_META, NR_QTD, DS_META, CD_CPF) VALUES (SQ_META.NEXTVAL, ?, ?, ?)";
 
             stmt = connection.prepareStatement(sql);
 
-            stmt.setString(1, goals.getDescptGoal());
-            stmt.setDouble(2, goals.getQtdGoal());
+            stmt.setDouble(1, goals.getQtdGoal());
+            stmt.setString(2, goals.getDescptGoal());
+            stmt.setLong(3, cpf_id);
 
-            // TODO - verificar se há algum retorno desse executeUPdate
             int sucess = stmt.executeUpdate();
 
             if (sucess == 1) {
@@ -61,6 +61,7 @@ public class OracleGoalsDAO implements GoalsDAO {
             connection = DBConnectManager.getConnection();
 
 
+
             sql = "SELECT * FROM T_HT_META WHERE CD_CPF = ?";
 
             stmt = connection.prepareStatement(sql);
@@ -69,10 +70,11 @@ public class OracleGoalsDAO implements GoalsDAO {
 
             ResultSet rs = stmt.executeQuery();
 
+
             if (rs.next()) {
                 int code = rs.getInt("CD_META");
+                double calories = rs.getDouble("NR_QTD");
                 String dsMeta = rs.getString("DS_META");
-                double calories = rs.getDouble("VL_CONSUMO_CALORIAS");
 
                 Goals gl = new Goals(code, dsMeta, calories);
 
@@ -100,7 +102,7 @@ public class OracleGoalsDAO implements GoalsDAO {
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "UPDATE T_HT_META SET VL_CONSUMO_CALORIAS = ? WHERE CD_META = ? ";
+            sql = "UPDATE T_HT_META SET NR_QTD = ? WHERE CD_META = ? ";
 
             stmt = connection.prepareStatement(sql);
             stmt.setDouble(1, goalItem);

@@ -34,8 +34,8 @@ public class OracleUserDAO implements UserDAO {
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "INSERT INTO T_HT_USER(cd_cpf, nm_nome, nm_sobrenome, dt_nascimento, ds_sexo, " +
-                    "ds_email, nm_senha, vl_peso_inicial, vl_altura_inicial, vl_imc_inicial, nr_telefone, ds_plano)" +
+            sql = "INSERT INTO T_HT_USER(cd_cpf, nm_nome, nm_sobrenome, dt_nasc, ds_sexo, " +
+                    "ds_email, nm_senha, vl_peso_init, vl_altura_init, vl_imc_inicial, nr_phone, ds_plano)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             stmt = connection.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class OracleUserDAO implements UserDAO {
             stmt.executeUpdate();
 
             sql = "INSERT INTO T_HT_EMER(cd_contato, nm_nome, nm_sobrenome, ds_parente, " +
-                    "ds_email, cd_cpf, nr_telefone)" +
+                    "ds_email, cd_cpf, nr_phone)" +
                     "VALUES (SQ_CONT_EMER.NEXTVAL, ?, ?, ?, ?, ?, ?)";
 
             stmt = connection.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class OracleUserDAO implements UserDAO {
             stmt.setString(2, ec.getLastName());
             stmt.setString(3, ec.getKinship());
             stmt.setString(4, ec.getEmail());
-            stmt.setLong(5, ec.getCpf_id());
+            stmt.setLong(5, user.getCpf_id());
             stmt.setString(6, ec.getPhone());
 
             stmt.executeUpdate();
@@ -96,29 +96,17 @@ public class OracleUserDAO implements UserDAO {
      */
     @Override
     public void update(User user) throws DBException {
+
+
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "UPDATE T_HT_USUARIO SET ds_email=? WHERE cd_cpf = ?";
+            sql = "UPDATE T_HT_USER SET ds_email=? , nr_phone= ?, ds_plano = ?  WHERE cd_cpf = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, user.getEmail());
-            stmt.setLong(2, user.getCpf_id());
-
-            stmt.executeUpdate();
-
-
-            sql = "UPDATE T_HT_TELEFONE SET nr_numero=? WHERE cd_cpf = ?";
-            stmt = connection.prepareStatement(sql);
-            stmt.setString(1, user.getPhone());
-            stmt.setLong(2, user.getCpf_id());
-
-            stmt.executeUpdate();
-
-
-            sql = "UPDATE T_HT_PLAN_COMERCIAL SET nm_plano=? WHERE cd_cpf = ?";
-            stmt = connection.prepareStatement(sql);
-            stmt.setString(1, user.getType());
-            stmt.setLong(2, user.getCpf_id());
+            stmt.setString(2, user.getPhone());
+            stmt.setString(3, user.getType());
+            stmt.setLong(4, user.getCpf_id());
 
             stmt.executeUpdate();
 
@@ -147,7 +135,7 @@ public class OracleUserDAO implements UserDAO {
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = " DELETE FROM T_HT_USUARIO WHERE cd_cpf = ? AND pwd = ?";
+            sql = " DELETE FROM T_HT_USER WHERE cd_cpf = ? AND pwd = ?";
 
             stmt = connection.prepareStatement(sql);
 
@@ -168,6 +156,7 @@ public class OracleUserDAO implements UserDAO {
         }
     }
 
+
     @Override
     public User read(String email, String pwd) throws DBException {
         User userRead = null;
@@ -187,16 +176,16 @@ public class OracleUserDAO implements UserDAO {
                 long idDb = rs.getLong("cd_cpf");
                 String nameDb = rs.getString("nm_nome");
                 String lastNameDb = rs.getString("nm_sobrenome");
-                java.sql.Date dtBirthday = rs.getDate("dt_nascimento");
+                java.sql.Date dtBirthday = rs.getDate("dt_nasc");
                 Calendar btdDb = Calendar.getInstance();
                 btdDb.setTimeInMillis(dtBirthday.getTime());
                 char genderDb = rs.getString("ds_sexo").charAt(0);
                 String emailDb = rs.getString("ds_email");
                 String pwdDb = rs.getString("nm_senha");
-                Double weightDb = rs.getDouble("vl_peso_inicial");
-                Double heightDb = rs.getDouble("vl_altura_inicial");
+                Double weightDb = rs.getDouble("vl_peso_init");
+                Double heightDb = rs.getDouble("vl_altura_init");
                 Double imcDb = rs.getDouble("vl_imc_inicial");
-                String phoneDb = rs.getString("nr_telefone");
+                String phoneDb = rs.getString("nr_phone");
                 String planDb = rs.getString("ds_plano");
 
                 BusinessPlan bp = new BusinessPlan(planDb);

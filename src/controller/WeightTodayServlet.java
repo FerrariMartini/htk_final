@@ -4,6 +4,7 @@ import factory.DAOFactory;
 import model.DAO.WeightTodayDAO;
 import model.entities_beans.User;
 import model.entities_beans.WeightToday;
+import model.service.ImcCaculation;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,7 @@ public class WeightTodayServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private WeightTodayDAO daoWeight;
+
     private SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
 
 
@@ -29,6 +31,20 @@ public class WeightTodayServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        try {
+            HttpSession session = req.getSession();
+            User loggedUser = (User) session.getAttribute("user");
+            req.setAttribute("uName", loggedUser.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Deu merda no WeightTodayServlet " + e.getMessage());
+        }
+
+        req.getRequestDispatcher("my_day_page.jsp").forward(req, resp);
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
             HttpSession session = req.getSession();
@@ -44,8 +60,8 @@ public class WeightTodayServlet extends HttpServlet {
             System.out.println("dia de hoje é " + dateToday);
             System.out.println("peso de hoje é " + weightToday);
 
-//            WeightToday newWeightToday = new WeightToday(weightToday, dt, currentImc(loggedUser.getInitHeight(), weightToday));
-            WeightToday newWeightToday = new WeightToday(0, weightToday, dt, currentImc(1.78, weightToday));
+            WeightToday newWeightToday = new WeightToday(0, weightToday, dt, ImcCaculation.evaluateImc(weightToday, loggedUser.getInitHeight()));
+//            WeightToday newWeightToday = new WeightToday(0, weightToday, dt, ImcCaculation.evaluateImc(1.78, weightToday));
 
 
             boolean sucess = daoWeight.create(newWeightToday, loggedUser.getCpf_id());
@@ -57,14 +73,9 @@ public class WeightTodayServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Deu merda no WeightTodayServlet " + e.getMessage());
-            req.getRequestDispatcher("erro404.jsp").forward(req, resp);
+            req.setAttribute("err", "Não encontrei os dados :(");
         }
 
         req.getRequestDispatcher("my_day_page.jsp").forward(req, resp);
     }
-
-    private double currentImc(double initHeight, double weightDay) {
-        return weightDay / (initHeight * initHeight);
-    }
-
 }

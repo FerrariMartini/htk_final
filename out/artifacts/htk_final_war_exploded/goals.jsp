@@ -22,48 +22,7 @@
 <body>
 <div class="container-fluid">
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top navbar-light">
-
-            <div class="container align-items-center">
-
-                <div class="brand_container">
-                    <a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
-                </div>
-
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                        class="navbar-toggler"
-                        data-target="#menu" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="container">
-                    <div class="collapse navbar-collapse justify-content-end" id="menu">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link " href="dashboard.jsp">Resumo da minha Saúde</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_day_page.jsp">Meu Dia</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_account.jsp">Meus Dados</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link active" href="goals.jsp">Minhas Metas</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.jsp">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+        <%@include file="menu_interno.jsp"%>
     </header>
 
     <main>
@@ -86,7 +45,7 @@
                 <div class="card-body">
                     <form action="Metas" method="post">
                         <div class="form-row justify-content-around">
-                            <div class="col-auto">
+                            <div class="flex-column">
                                 <label for="exercises_goal">&nbsp;Atividades Físicas</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -95,14 +54,14 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" id="exercises_goal" placeholder="3.600"
-                                           name="e">
+                                           name="eg">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Calorias queimadas/dia</small>
                                 </div>
                             </div>
 
-                            <div class="col-auto">
+                            <div class="flex-column">
                                 <label for="meals_goals">&nbsp;Hábitos Alimentares</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -111,14 +70,14 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" id="meals_goals" placeholder="2.400"
-                                           name="m">
+                                           name="mg">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Calorias consumidas/dia</small>
                                 </div>
                             </div>
 
-                            <div class="col-auto">
+                            <div class="flex-column">
                                 <label for="hydration_goals">&nbsp;Nível de Hidratação</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -127,14 +86,30 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" id="hydration_goals" placeholder="4,0"
-                                           name="h">
+                                           name="hg">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Litros ingeridos/dia</small>
                                 </div>
                             </div>
 
-                            <div class="col-auto">
+<%--                            <div class="flex-column">--%>
+<%--                                <label for="hydration_goals">&nbsp;IMC Ideal</label>--%>
+<%--                                <div class="input-group mb-2">--%>
+<%--                                    <div class="input-group-prepend">--%>
+<%--                                        <div class="input-group-text"><i--%>
+<%--                                                class="fas fa-glass-whiskey icon_gray"></i>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <input type="text" class="form-control" id="icm_goals" placeholder="25,1"--%>
+<%--                                           name="i">--%>
+<%--                                </div>--%>
+<%--                                <div class="mb-3 text-right">--%>
+<%--                                    <small>fórmula: peso/(altura * altura)</small>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+
+                            <div class="flex-column">
                                 <label for="weight_goals">&nbsp;Meu Peso Ideal</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -142,7 +117,7 @@
                                                 class="fas fa-weight icon_gray"></i>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" id="weight_goals" placeholder="84" name="w">
+                                    <input type="text" class="form-control" id="weight_goals" placeholder="84" name="wg">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Kilos</small>

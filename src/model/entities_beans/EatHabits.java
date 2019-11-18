@@ -1,6 +1,6 @@
 package model.entities_beans;
 
-import java.util.List;
+import java.util.Calendar;
 
 /**
  * Classe que cria o objeto hábitos alimentares.
@@ -10,18 +10,26 @@ import java.util.List;
  */
 
 public class EatHabits {
+    private Integer code;
     private String meal;
     private String food;
     private Float qtd;
     private Float portion;
     private Float calories;
+    private Calendar day;
 
-    public EatHabits(String meal, String food, Float qtd, Float portion, Float calories) {
+    public EatHabits(Integer code, String meal, String food, Float qtd, Float portion, Float calories, Calendar day) {
+        this.code = code;
         this.meal = meal;
         this.food = food;
         this.qtd = qtd;
         this.portion = portion;
         this.calories = calories;
+        this.day = day;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 
     public String getMeal() {
@@ -64,26 +72,12 @@ public class EatHabits {
         this.calories = calories;
     }
 
-
-    /**
-     * Salvar os dados dos habitos alimentares no BD,
-     * @param: uma lista com os dados de todas a refeições realizadas.
-     * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
-     */
-    public boolean save(List<String> mealsList) {
-        boolean isSave = false;
-
-        return isSave;
+    public Calendar getDay() {
+        return day;
     }
 
-    /**
-     * Deletar a refeicão do BD,
-     * @param: meal é uma key para indicar qual refeição e index é o valor indicando qual a comida.
-     * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
-     */
-    public boolean delete(String meal, int index) {
-        boolean isDelete = false;
-        return isDelete;
+    public void setDay(Calendar day) {
+        this.day = day;
     }
 }
 

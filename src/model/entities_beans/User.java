@@ -6,10 +6,10 @@ package model.entities_beans;
  * @version 1.3
  */
 
+import model.service.ImcCaculation;
+
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public final class User extends People implements Serializable {
 
@@ -32,7 +32,7 @@ public final class User extends People implements Serializable {
         this.pwd = pwd;
         this.initWeight = initWeight;
         this.initHeight = initHeight;
-        this.initIMC = evaluateImc(initWeight, initHeight);
+        this.initIMC = ImcCaculation.evaluateImc(initWeight, initHeight);
         this.type = type;
 
     }
@@ -45,13 +45,6 @@ public final class User extends People implements Serializable {
         return gender;
     }
 
-    /**
-     * Será permitido apenas inserir/alterar senha somente via construtor ou método Update.
-     * public void setPwd(String pwd) {
-     * this.pwd = pwd;
-     * }
-     */
-
     public String getPwd() {
         return pwd;
     }
@@ -60,29 +53,13 @@ public final class User extends People implements Serializable {
         return initWeight;
     }
 
-    /* Será permitido apenas inserir peso inicial pelo construtor.
-    public void setInitWeight(Float initWeight) {
-        this.initWeight = initWeight;
-    }*/
-
     public double getInitHeight() {
         return initHeight;
     }
 
-    /* Será permitido apenas inserir altura pelo construtor.
-
-    public void setInitHeight(Float initHeight) {
-        this.initHeight = initHeight;
-    }*/
-
     public double getInitIMC() {
         return initIMC;
     }
-
-    /* IMC inicial será calculado e inserido via por método.
-    public void setInitIMC(Float initIMC) {
-        this.initIMC = initIMC;
-    }*/
 
     public String getType() {
         return type.getType();
@@ -92,16 +69,15 @@ public final class User extends People implements Serializable {
         this.type = type;
     }
 
-    /**
-     * metodo publico para fazer o calculo inicial do IMC.
-     *
-     * @param: peso inicial e altura inicial.
-     * @return: deve retornar um valor float que é o IMC e adicionar na variável initIMC;
-     */
-    private double evaluateImc(double initWeight, double initHeight) {
-        double imc = initWeight / (initHeight * initHeight);
-        return imc;
-    }
+    //TODO - entender como montar a criptografica e comparar a pwd criptografada com a que virá no login de acesso.
+//    private void setPwd(String pwd) {
+//        try {
+//            this.pwd = CriptografiaUtil.criptografar(pwd);
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     public String toString() {

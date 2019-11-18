@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 @WebServlet("/Hidratar")
 public class HydraServlet extends HttpServlet {
@@ -44,7 +43,7 @@ public class HydraServlet extends HttpServlet {
             String unitHydra = req.getParameter("unit_hydra");
             float unit = Float.parseFloat(unitHydra);
 
-            String qtdHydra = req.getParameter("qtd_hydra");
+            String qtdHydra = req.getParameter("qtd_hydra").replace(",", ".");
             float qtd = Float.parseFloat(qtdHydra);
 
             System.out.println(qtd);

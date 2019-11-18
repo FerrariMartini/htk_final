@@ -7,6 +7,7 @@ import model.DBException.DBException;
 import model.entities_beans.BusinessPlan;
 import model.entities_beans.EmergencyContact;
 import model.entities_beans.User;
+import sun.util.calendar.BaseCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd ");
+    private SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy");
     private UserDAO dao;
 
     public void init() throws ServletException {
@@ -44,6 +45,7 @@ public class RegisterServlet extends HttpServlet {
             String email = req.getParameter("email");
 
             String bt = req.getParameter("birthday");
+            System.out.println(bt);
             Calendar birthday = Calendar.getInstance();
             birthday.setTime(sfd.parse(bt));
 

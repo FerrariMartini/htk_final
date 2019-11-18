@@ -25,7 +25,6 @@ public class GoalsServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private GoalsDAO dao;
-    private boolean sucess = false;
 
 
     public void init() throws ServletException {
@@ -43,12 +42,11 @@ public class GoalsServlet extends HttpServlet {
             Locale lcUS = new Locale("en", "US");
 
             NumberFormat fBRL = NumberFormat.getInstance(lcBRL);
-            NumberFormat fUS = NumberFormat.getInstance(lcUS);
 
-            double exerciseGoal = (Double) fBRL.parse(req.getParameter("e"));
-            double mealGoal = (Double) fBRL.parse(req.getParameter("m"));
-            double hydraGoal = (Double) fBRL.parse(req.getParameter("h"));
-            double weightGoal = (Double) fBRL.parse(req.getParameter("w"));
+            double exerciseGoal = (Double) fBRL.parse(req.getParameter("eg"));
+            double mealGoal = (Double) fBRL.parse(req.getParameter("mg"));
+            double hydraGoal = (Double) fBRL.parse(req.getParameter("hg"));
+            double weightGoal = (Double) fBRL.parse(req.getParameter("wg"));
 
             List<Goals> objGoalsList = new ArrayList<>();
 
@@ -62,7 +60,7 @@ public class GoalsServlet extends HttpServlet {
             objGoalsList.add(wGoal);
 
             for (Goals goals : objGoalsList) {
-                sucess = dao.create(goals, cpf_id);
+                boolean sucess = dao.create(goals, cpf_id);
 
                 if (sucess) {
                     req.setAttribute("sucess", "Metas cadastradas com sucesso!");

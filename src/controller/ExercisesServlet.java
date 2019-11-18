@@ -23,7 +23,7 @@ public class ExercisesServlet extends HttpServlet {
     private ExercisesDAO daoExe;
     private boolean sucess = false;
     private SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
-    private SimpleDateFormat sfd2 = new SimpleDateFormat("dd/MM/yyyy HH:MM:ss");
+    private SimpleDateFormat sfd2 = new SimpleDateFormat("HH:mm");
 
     public void init() {
         daoExe = DAOFactory.getExercisesDAO();
@@ -45,6 +45,8 @@ public class ExercisesServlet extends HttpServlet {
             String time = req.getParameter("time");
             Calendar tm = Calendar.getInstance();
             tm.setTime(sfd2.parse(time));
+
+            System.out.println();
 
             float exerCalories = Float.parseFloat(req.getParameter("exer_calories"));
 

@@ -28,18 +28,8 @@ public class BusinessPlan implements Serializable {
         return type;
     }
 
-
     public void setType(String type) {
         this.type = type;
     }
 
-    /**
-     * Realiza a chamada da operação de pagamento com a operadora de cartão.
-     *
-     * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
-     */
-    public boolean validatePayment() {
-        boolean isPaied = false;
-        return isPaied;
-    }
 }

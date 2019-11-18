@@ -36,7 +36,7 @@ public class OraclePressureDAO implements PressureDAO {
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "INSERT INTO T_HT_PRESSAO(cd_pressao, tm_hora, nr_sistolica_mm, nr_sistolica_hg, cd_cpf) VALUES (SQ_PRESSAO.NEXTVAL, ?, ?, ? ?)";
+            sql = "INSERT INTO T_HT_PRESSAO (cd_pressao, tm_hora, nr_sistolica_mm, nr_sistolica_hg, cd_cpf) VALUES (SQ_PRESSAO.NEXTVAL, ?, ?, ?, ?)";
 
             stmt = connection.prepareStatement(sql);
 
@@ -76,27 +76,30 @@ public class OraclePressureDAO implements PressureDAO {
 
 
     @Override
-    public List<Pressure> read(Calendar date, String cpf_id) {
+    public List<Pressure> read(Calendar date, Long cpf_id) {
         List<Pressure> pressureList = new ArrayList<>();
 
         try {
             connection = DBConnectManager.getConnection();
 
-            sql = "SELECT * FROM T_HT_PRESSAO WHERE TM_HORA = ? AND CD_CPF ?";
+            sql = "SELECT * FROM T_HT_PRESSAO WHERE TM_HORA = ? AND CD_CPF = ?";
 
             stmt = connection.prepareStatement(sql);
+            java.sql.Date data = new java.sql.Date(date.getTimeInMillis());
+            stmt.setDate(1, data);
+            stmt.setLong(2, cpf_id);
 
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                int code = rs.getInt("Código");
-                java.sql.Date data = rs.getDate("Data e Hora");
-                Calendar dt = Calendar.getInstance();
-                dt.setTimeInMillis(data.getTime());
-                int sis_mm = rs.getInt("Sistólica mm");
-                int sis_hg = rs.getInt("Sistólica hg");
+                int codeDB = rs.getInt("cd_pressao");
+                java.sql.Date dataDB = rs.getDate("tm_hora");
+                Calendar dtDB = Calendar.getInstance();
+                dtDB.setTimeInMillis(dataDB.getTime());
+                int sis_mmDB = rs.getInt("nr_sistolica_mm");
+                int sis_hgDB = rs.getInt("nr_sistolica_hg");
 
-                Pressure pressure = new Pressure(code, sis_mm, sis_hg, dt);
+                Pressure pressure = new Pressure(codeDB, sis_mmDB, sis_hgDB, dtDB);
                 pressureList.add(pressure);
             }
 

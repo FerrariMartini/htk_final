@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -29,76 +30,48 @@
 <body>
 <div class="container-fluid">
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top navbar-light">
-
-            <div class="container align-items-center">
-
-                <div class="brand_container">
-                    <a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
-                </div>
-
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                        class="navbar-toggler"
-                        data-target="#menu" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="container">
-                    <div class="collapse navbar-collapse justify-content-end" id="menu">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="dashboard.jsp">Resumo da minha Saúde</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_day_page.jsp">Meu Dia</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_account.jsp">Meus Dados</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="goals.jsp">Minhas Metas</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.jsp">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <%@include file="menu_interno.jsp" %>
     </header>
 
     <!--Sessão principal -->
     <main>
         <section class="container main_system_container">
-
             <div class="container container_hearder_dashboard">
-                <form>
-                    <div class="form-row align-items-center justify-content-center">
-                        <div class="flex-column mb-1">
-                            <span id="currentDayStyleText" class="goal-text">RESUMO DO DIA:</span>
-                        </div>
-                        <div class="flex-column mb-1">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label class="sr-only" for="current_date">data de hoje</label>
-                                    <i class="far fa-calendar-alt md20 icon_gray mt-1 input-group-text"></i>
-                                </div>
-                                <input class="form-control" id="current_date" type="text">
+                <c:if test="${not empty sucess}">
+                    <div class="alert alert-success text-center">${sucess}</div>
+                </c:if>
+                <c:if test="${not empty err}">
+                    <div class="alert alert-danger text-center">${err}</div>
+                </c:if>
+                <form action="Dashboard" method="post">
+                    <div class="form-row align-items-center justify-content-around mb-2">
+                        <div class="row justify-content-center">
+                            <div class="flex-column">
+                                <c:if test="${not empty uName}">
+                                    <h3 id="greetingDayStyleText">Olá ${uName}.<br>Lembre-se de beber muita água hoje!</h3>
+                                </c:if>
                             </div>
                         </div>
-                        <div class="flex-column mb-2 mt-2">
-                            <button class="btn btn-success btn-sm" type="submit">BUSCAR</button>
+                        <div class="row justify-content-center">
+                            <div class="flex-column">
+                                <h4 id="currentDayStyleText">RESUMO<br/>DO DIA:</h4>
+                            </div>
+                            <div id="container-datePicker" class="flex-column">
+                                <div class="input-group">
+                                    <i class="far fa-calendar-alt md20 icon_gray input-group-text mt-1"></i>
+                                    <div class="input-group-prepend">
+                                        <input type="text" class="form-control" name="dateToday"
+                                               id="current_date" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-column">
+                                <button class="btn btn-success btn-sm" type="submit">BUSCAR</button>
+                            </div>
                         </div>
                     </div>
-
                 </form>
             </div>
-
 
             <div class="row justify-content-around">
                 <!-- PESO -->
@@ -108,7 +81,7 @@
                             <div class="col-auto goal-text borderBottom-customized">
                                 <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                             </div>
-                            <div class="col-auto goal-number borderBottom-customized">&nbsp;-8<span
+                            <div class="col-auto goal-number borderBottom-customized">&nbsp;$<span
                                     class="goal-measure-unit">Kg</span></div>
                         </div>
 

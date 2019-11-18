@@ -81,11 +81,11 @@ public class OracleExercisesDAO implements ExercisesDAO {
                 Calendar tm = Calendar.getInstance();
                 tm.setTimeInMillis(time.getTime());
 
-                float cal = rs.getFloat("VL_CALORIAS");
-
                 java.sql.Date today = rs.getDate("DT_DIA");
                 Calendar day = Calendar.getInstance();
                 day.setTimeInMillis(time.getTime());
+
+                float cal = rs.getFloat("VL_CALORIAS");
 
                 Exercises ex = new Exercises(code, nomeExer, tm, cal, day);
 

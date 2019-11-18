@@ -23,48 +23,7 @@
 <body>
 <div class="container-fluid">
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top navbar-light">
-
-            <div class="container align-items-center">
-
-                <div class="brand_container">
-                    <a class="navbar-brand" href="index.jsp"><h2 class="logoHTK">Health Track</h2></a>
-                </div>
-
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                        class="navbar-toggler"
-                        data-target="#menu" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="container">
-                    <div class="collapse navbar-collapse justify-content-end" id="menu">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link" href="dashboard.jsp">Resumo da minha Saúde</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link active" href="my_day_page.jsp">Meu Dia</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="my_account.jsp">Meus Dados</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="goals.jsp">Minhas Metas</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.jsp">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+        <%@include file="menu_interno.jsp" %>
     </header>
 
     <!--Sessão principal -->
@@ -81,7 +40,10 @@
                     <div class="form-row align-items-center justify-content-around">
                         <div class="row justify-content-center">
                             <div class="flex-column">
-                                <h3 id="greetingDayStyleText">Olá Ivan.<br>Lembre-se de beber muita água hoje!</h3>
+                                <c:if test="${not empty uName}">
+                                    <h3 id="greetingDayStyleText">Olá ${uName}.<br>Lembre-se de beber muita água hoje!
+                                    </h3>
+                                </c:if>
                             </div>
                         </div>
                         <div class="row justify-content-center">
@@ -139,13 +101,15 @@
                                             Insira
                                             aqui seus Pesos do dia:
                                         </div>
-                                        <div class="flex-column">&nbsp; 13/09/2019</div>
+                                        <c:if test="${not empty hoje}">
+                                            <div class="flex-column">${hoje}</div>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
                                     <div>
                                         <form id="weight-form" class="row justify-content-center" action="CadastraPeso"
-                                              method="get">
+                                              method="post">
                                             <div class="form-group col-auto">
                                                 <input type="hidden" class="hidden" id="weightDay" name="dateToday"
                                                        dataformatas="dd/mm/yyyy">
@@ -173,7 +137,7 @@
                         </div>
 
                         <!--Exercicios Físicos-->
-                        <div class="tab-pane fade show mt-5" id="pills-workout" role="tabpanel"
+                        <div class="tab-pane fade mt-5" id="pills-workout" role="tabpanel"
                              aria-labelledby="pills-workout-tab">
                             <div class="card myday_card">
                                 <div class="card-header">
@@ -184,69 +148,70 @@
                                             Atividades
                                             Físicas no dia:
                                         </div>
-                                        <div class="flex-column">&nbsp;13/09/2019 |</div>
-                                        <div class="flex-column">&nbsp;0<span> cal. queimadas
-									</span></div>
+                                        <c:if test="${not empty hoje}">
+                                            <div class="flex-column">${hoje}</div>
+                                        </c:if>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <form id="exercise-form" action="Exercicios" method="get">
-                                        <table class="table table-borderless table-responsive-lg">
-                                            <thead>
-                                            <tr>
-                                                <th>Exercícios</th>
-                                                <th>Tempo</th>
-                                                <th>Calorias</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
+                            </div>
+                            <div class="card-body">
+                                <form id="exercise-form" action="Exercicios" method="get">
+                                    <table class="table table-borderless table-responsive-lg">
+                                        <thead>
+                                        <tr>
+                                            <th>Exercícios</th>
+                                            <th>Tempo</th>
+                                            <th>Calorias</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
                                                     <div>
-                                                        <div>
-                                                            <input type="hidden" class="hidden" id="exercise-Day"
-                                                                   name="dateToday"
-                                                                   dataformatas="dd/mm/yyyy">
-                                                            <input type="text" class="form-control text-center"
-                                                                   id="exerciseField" placeholder="Jogar Futebol"
-                                                                   name="exercise" required>
-                                                        </div>
+                                                        <input type="hidden" class="hidden" id="exercise-Day"
+                                                               name="dateToday"
+                                                               dataformatas="dd/mm/yyyy">
+                                                        <input type="text" class="form-control text-center"
+                                                               id="exerciseField" placeholder="Jogar Futebol"
+                                                               name="exercise" required>
                                                     </div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <label class="sr-only" for="exer_time">tempo</label>
-                                                        <input type="time" class="form-control" id="exer_time"
-                                                               name="time"
-                                                               required>
-                                                    </div>
-                                                </td>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <label class="sr-only" for="exer_time">tempo</label>
+                                                    <input type="time" class="form-control" id="exer_time"
+                                                           name="time"
+                                                           required>
+                                                </div>
+                                            </td>
 
-                                                <td>
-                                                    <div>
-                                                        <label class="sr-only" for="exer_cal">calorias</label>
-                                                        <input type="text" class="form-control" name="exer_calories"
-                                                               id="exer_cal"
-                                                               placeholder="647" required>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </form>
-                                </div>
-                                <div class="card-footer card_footer_my_day">
-                                    <button type="button" class="btn btn-lg">
-                                        <i class="material-icons md20 icon_gray">add_circle_outline</i>
-                                    </button>
-                                    <button type="button" class="btn btn-lg">
-                                        <i class="material-icons md20 icon_gray"
-                                           type="deleteField">remove_circle_outline</i>
-                                    </button>
-                                    <button type="submit" form="exercise-form" class="btn btn-success btn-sm">SALVAR
-                                    </button>
-                                </div>
+                                            <td>
+                                                <div>
+                                                    <label class="sr-only" for="exer_cal">calorias</label>
+                                                    <input type="text" class="form-control" name="exer_calories"
+                                                           id="exer_cal"
+                                                           placeholder="647" required>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div class="card-footer card_footer_my_day">
+                                <button type="button" class="btn btn-lg">
+                                    <i class="material-icons md20 icon_gray">add_circle_outline</i>
+                                </button>
+                                <button type="button" class="btn btn-lg">
+                                    <i class="material-icons md20 icon_gray"
+                                       type="deleteField">remove_circle_outline</i>
+                                </button>
+                                <button type="submit" form="exercise-form" class="btn btn-success btn-sm">SALVAR
+                                </button>
                             </div>
                         </div>
+
 
                         <!--Hábitos Alimentares-->
                         <div class="tab-pane fade" id="pills-meals" role="tabpanel"
@@ -258,7 +223,9 @@
                                         <div class="flex-column text-center"><i class="fas fa-utensils"></i>
                                             &nbsp;Insira aqui suas Refeições no dia:
                                         </div>
-                                        <div class="flex-column">&nbsp;13/09/2019 |</div>
+                                        <c:if test="${not empty hoje}">
+                                            <div class="flex-column">${hoje}</div>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -305,7 +272,7 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
                                                     </tr>
@@ -375,7 +342,7 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
                                                     </tr>
@@ -446,16 +413,15 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
-
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
                                                         <td>
-                                                            <div id=" asdad">
+                                                            <div>
                                                                 <div>
                                                                     <input type="hidden" class="hidden" id="lunch-Day"
                                                                            name="dateToday"
@@ -519,10 +485,9 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
-
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -592,7 +557,7 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
                                                     </tr>
@@ -664,7 +629,7 @@
                                                     <thead>
                                                     <tr>
                                                         <th>Alimento</th>
-                                                        <th>Porção (gramas)</th>
+                                                        <th>Porção (gr/ml)</th>
                                                         <th>Quantidade (unit.)</th>
                                                         <th>Calorias (kcal)</th>
                                                     </tr>
@@ -741,7 +706,9 @@
                                             Inserir
                                             aqui sua Pressão Arterial do dia:
                                         </div>
-                                        <div class="flex-column">&nbsp; 13/09/2019</div>
+                                        <c:if test="${not empty hoje}">
+                                            <div class="flex-column">${hoje}</div>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
@@ -756,7 +723,7 @@
                                                        aria-describedby="bloodPressure" placeholder="14/8"
                                                        required>
                                                 <label class="myday_pressure_text" for="blood_pressure">
-                                                    <small>13/04 | 8:50min</small>
+                                                    <small>mm/hg</small>
                                                 </label>
                                             </div>
                                         </form>
@@ -784,7 +751,9 @@
                                         <div class="flex-column text-center"><i class="fas fa-glass-whiskey"></i>&nbsp;Preencher
                                             Consumo de Água do dia:
                                         </div>
-                                        <div class="flex-column">&nbsp;13/09/2019 |&nbsp;0 litros</div>
+                                        <c:if test="${not empty hoje}">
+                                            <div class="flex-column">${hoje}</div>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -808,7 +777,7 @@
                                                        aria-describedby="qtd_water" placeholder="10" required>
                                             </div>
                                             <div class="form-group col-auto">
-                                                <label class="" for="qtd_water">Quantidade (litros)</label>
+                                                <label class="" for="qtd_water">Quantidade (l/ml)</label>
                                                 <input type="text" class="form-control text-center" id="qtd_water"
                                                        name="qtd_hydra"
                                                        aria-describedby="qtd_water" placeholder="4" required>

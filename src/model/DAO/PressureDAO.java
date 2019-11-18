@@ -11,7 +11,7 @@ public interface PressureDAO {
 
     boolean create(Pressure pressure, String cpf_id) throws DBException;
 
-    List<Pressure> read(Calendar date, String cpf_id) throws DBException;
+    List<Pressure> read(Calendar date, Long cpf_id) throws DBException;
 
     void update(Pressure pressure) throws DBException;
 
