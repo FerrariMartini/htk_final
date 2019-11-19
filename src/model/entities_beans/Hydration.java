@@ -66,4 +66,15 @@ public class Hydration implements Serializable {
     public void setQtd(Float qtd) {
         this.qtd = qtd;
     }
+
+    @Override
+    public String toString() {
+        return "Hydration{" +
+                "id=" + id +
+                ", data=" + data +
+                ", glass='" + glass + '\'' +
+                ", unit=" + unit +
+                ", qtd=" + qtd +
+                '}';
+    }
 }

@@ -65,7 +65,7 @@ public class OracleHydrationDAO implements HydrationDAO {
     }
 
     @Override
-    public List<Hydration> readWeight(Calendar date, Long cpf_id) throws DBException {
+    public List<Hydration> readHydra(Calendar date, Long cpf_id) throws DBException {
         List<Hydration> hydraList = new ArrayList<>();
 
         try {
@@ -81,7 +81,7 @@ public class OracleHydrationDAO implements HydrationDAO {
 
             ResultSet rs = stmt.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 int code = rs.getInt("CD_HIDRA");
 
                 java.sql.Date day = rs.getDate("DT_DIA");

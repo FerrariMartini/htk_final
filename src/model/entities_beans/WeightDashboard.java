@@ -52,4 +52,14 @@ public class WeightDashboard implements Serializable {
     public void setInitWeight(Double initWeight) {
         this.initWeight = initWeight;
     }
+
+    @Override
+    public String toString() {
+        return "WeightDashboard{" +
+                "goal=" + goal +
+                ", lost=" + lost +
+                ", lastWight=" + lastWight +
+                ", initWeight=" + initWeight +
+                '}';
+    }
 }

@@ -43,15 +43,15 @@
                 <c:if test="${not empty err}">
                     <div class="alert alert-danger text-center">${err}</div>
                 </c:if>
-                <div class="form-row align-items-center justify-content-around mb-2">
-                    <div class="row justify-content-center">
-                        <div class="flex-column">
-                            <c:if test="${not empty uName}">
-                                <h3 id="greetingDayStyleText">Olá ${uName}.<br>Lembre-se de beber muita água hoje!</h3>
-                            </c:if>
+                <form action="Dashboard" method="post">
+                    <div class="form-row align-items-center justify-content-around mb-2">
+                        <div class="row justify-content-center">
+                            <div class="flex-column">
+                                <c:if test="${not empty uName}">
+                                    <h3 id="greetingDayStyleText">Olá ${uName}.<br>Lembre-se de beber muita água hoje!</h3>
+                                </c:if>
+                            </div>
                         </div>
-                    </div>
-                    <form id="findDay" action="Dashboard" method="post">
                         <div class="row justify-content-center">
                             <div class="flex-column">
                                 <h4 id="currentDayStyleText">RESUMO<br/>DO DIA:</h4>
@@ -66,11 +66,11 @@
                                 </div>
                             </div>
                             <div class="flex-column">
-                                <button class="btn btn-success btn-sm" form="findDay" type="submit">BUSCAR</button>
+                                <button class="btn btn-success btn-sm" type="submit">BUSCAR</button>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
 
             <div class="row justify-content-around">

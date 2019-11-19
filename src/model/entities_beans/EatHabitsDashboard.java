@@ -61,4 +61,15 @@ public class EatHabitsDashboard implements Serializable {
     public void setQtdMainMeal(Integer qtdMainMeal) {
         this.qtdMainMeal = qtdMainMeal;
     }
+
+    @Override
+    public String toString() {
+        return "EatHabitsDashboard{" +
+                "goal=" + goal +
+                ", gainCalories=" + gainCalories +
+                ", qtdCoffeTea=" + qtdCoffeTea +
+                ", qtdSnack=" + qtdSnack +
+                ", qtdMainMeal=" + qtdMainMeal +
+                '}';
+    }
 }

@@ -52,4 +52,14 @@ public class PresImcDashboard implements Serializable {
     public void setHgAvgPressure(double hgAvgPressure) {
         this.hgAvgPressure = hgAvgPressure;
     }
+
+    @Override
+    public String toString() {
+        return "PresImcDashboard{" +
+                "goal=" + goal +
+                ", imcCurrent=" + imcCurrent +
+                ", mmAvgPressure=" + mmAvgPressure +
+                ", hgAvgPressure=" + hgAvgPressure +
+                '}';
+    }
 }

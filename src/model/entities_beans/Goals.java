@@ -43,4 +43,13 @@ public class Goals implements Serializable {
     public void setQtdGoal(Double qtdGoal) {
         this.qtdGoal = qtdGoal;
     }
+
+    @Override
+    public String toString() {
+        return "Goals{" +
+                "code=" + code +
+                ", descptGoal='" + descptGoal + '\'' +
+                ", qtdGoal=" + qtdGoal +
+                '}';
+    }
 }

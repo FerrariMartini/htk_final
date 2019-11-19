@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
                 todayC.setTime(sfd.parse(todayS));
                 session.setAttribute("dateToday", todayC);
 
-                response.sendRedirect("Dashboard");
+                response.sendRedirect("dashboard.jsp");
 
             } else {
                 request.setAttribute("err", "Login ou Senha inválidos. Verifique e tente novamente");

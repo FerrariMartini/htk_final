@@ -52,4 +52,14 @@ public class ExerciseDashboard implements Serializable {
     public void setTimeExercises(Calendar timeExercises) {
         this.timeExercises = timeExercises;
     }
+
+    @Override
+    public String toString() {
+        return "ExerciseDashboard{" +
+                "goal=" + goal +
+                ", lostCalories=" + lostCalories +
+                ", qtdExercises=" + qtdExercises +
+                ", timeExercises=" + timeExercises +
+                '}';
+    }
 }

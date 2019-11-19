@@ -71,7 +71,7 @@ public class OracleGoalsDAO implements GoalsDAO {
             ResultSet rs = stmt.executeQuery();
 
 
-            if (rs.next()) {
+            while (rs.next()) {
                 int code = rs.getInt("CD_META");
                 double calories = rs.getDouble("NR_QTD");
                 String dsMeta = rs.getString("DS_META");

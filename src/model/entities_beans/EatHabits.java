@@ -79,6 +79,19 @@ public class EatHabits {
     public void setDay(Calendar day) {
         this.day = day;
     }
+
+    @Override
+    public String toString() {
+        return "EatHabits{" +
+                "code=" + code +
+                ", meal='" + meal + '\'' +
+                ", food='" + food + '\'' +
+                ", qtd=" + qtd +
+                ", portion=" + portion +
+                ", calories=" + calories +
+                ", day=" + day +
+                '}';
+    }
 }
 
 

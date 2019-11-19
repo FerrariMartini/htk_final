@@ -58,7 +58,14 @@ public class WeightToday implements Serializable {
         return this.currentImc;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "WeightToday{" +
+                "code=" + code +
+                ", day=" + day +
+                ", weightDay=" + weightDay +
+                ", currentImc=" + currentImc +
+                '}';
+    }
 }
 

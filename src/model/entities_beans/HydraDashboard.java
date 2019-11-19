@@ -42,4 +42,13 @@ public class HydraDashboard implements Serializable {
     public void setQtdGalss(Integer qtdGalss) {
         this.qtdGalss = qtdGalss;
     }
+
+    @Override
+    public String toString() {
+        return "HydraDashboard{" +
+                "goal=" + goal +
+                ", gainHydra=" + gainHydra +
+                ", qtdGalss=" + qtdGalss +
+                '}';
+    }
 }

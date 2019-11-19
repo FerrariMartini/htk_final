@@ -32,4 +32,10 @@ public class BusinessPlan implements Serializable {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return "BusinessPlan{" +
+                "type='" + type + '\'' +
+                '}';
+    }
 }

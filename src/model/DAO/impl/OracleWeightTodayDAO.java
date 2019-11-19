@@ -66,15 +66,15 @@ public class OracleWeightTodayDAO implements WeightTodayDAO {
             sql = "SELECT * FROM T_HT_WEIGHTDAY WHERE DT_DIA = ? AND CD_CPF = ?";
 
             stmt = connection.prepareStatement(sql);
-
             java.sql.Date data = new java.sql.Date(date.getTimeInMillis());
+            System.out.println(data);
             stmt.setDate(1, data);
             stmt.setLong(2, cpf_id);
 
             ResultSet rs = stmt.executeQuery();
+            System.out.println(rs);
 
-
-            if (rs.next()) {
+            while (rs.next()) {
                 int code = rs.getInt("CD_CODE");
                 double imc = rs.getDouble("VL_IMC_ATUAL");
                 double weight = rs.getDouble("VL_PESO_DIA");
@@ -83,7 +83,6 @@ public class OracleWeightTodayDAO implements WeightTodayDAO {
                 weightDay.setTimeInMillis(day.getTime());
 
                 WeightToday wt = new WeightToday(code, weight, weightDay, imc);
-
                 weightTodayList.add(wt);
             }
 

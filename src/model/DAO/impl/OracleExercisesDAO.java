@@ -73,7 +73,7 @@ public class OracleExercisesDAO implements ExercisesDAO {
 
             ResultSet rs = stmt.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 int code = rs.getInt("CD_EXERC");
                 String nomeExer = rs.getString("NM_ATIV_FISICA");
 

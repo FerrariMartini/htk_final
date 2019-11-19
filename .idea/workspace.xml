@@ -8,121 +8,47 @@
   <component name="ChangeListManager">
     <list default="true" id="063a8f5a-5835-4ea2-97df-7e1999985208" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/ExercisesServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/ExercisesServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/FoodServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/FoodServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/GoalsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/GoalsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/HydraServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/HydraServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/LoginServlet 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/LoginServlet 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/DashboardServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/DashboardServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/PressureServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/PressureServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/WeightTodayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/controller/WeightTodayServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/DashboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/DashboardDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/EatHabitsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/EatHabitsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/ExercisesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/ExercisesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/GoalsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/GoalsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/HydrationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/HydrationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/PressureDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/PressureDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/WeightTodayDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/WeightTodayDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleEatHabitsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleEatHabitsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleEmergencyContactDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleExercisesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleExercisesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleGoalsDAO 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleGoalsDAO 3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleGoalsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleGoalsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleHydrationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleHydrationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OraclePressureDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OraclePressureDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleWeightTodayDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/DAO/impl/OracleWeightTodayDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/BusinessPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/BusinessPlan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EatHabits.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EatHabits.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EmergencyContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EmergencyContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EatHabitsDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/EatHabitsDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/ExerciseDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/ExerciseDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Exercises.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Exercises.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Goals 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Goals 2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Goals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Goals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/HydraDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/HydraDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Hydration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Hydration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/People 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/People 3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/People.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Pressure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/Pressure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/PresImcDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/PresImcDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/WeightDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/WeightDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/WeightToday.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/model/entities_beans/WeightToday.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/testes/testes 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/testes/testes 2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/testes/testes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/classes/testes/testes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/customizedAll.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/css_customized/customizedAll.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/goals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/goals.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_day_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/htk_final_war_exploded/my_day_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/ExercisesServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/ExercisesServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/FoodServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/FoodServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/GoalsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/GoalsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/HydraServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/HydraServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/DashboardServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/DashboardServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/PressureServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/PressureServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/controller/WeightTodayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/controller/WeightTodayServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/DashboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/DashboardDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/EatHabitsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/EatHabitsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/ExercisesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/ExercisesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/GoalsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/GoalsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/HydrationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/HydrationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/PressureDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/PressureDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/WeightTodayDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/WeightTodayDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleEatHabitsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleEatHabitsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleEmergencyContactDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleExercisesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleExercisesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleGoalsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleGoalsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleHydrationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleHydrationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OraclePressureDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OraclePressureDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleWeightTodayDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/DAO/impl/OracleWeightTodayDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/BusinessPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/BusinessPlan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EatHabits.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EatHabits.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EmergencyContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EmergencyContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EatHabitsDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/EatHabitsDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/ExerciseDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/ExerciseDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Exercises.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Exercises.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Goals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Goals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/HydraDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/HydraDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Hydration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Hydration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/People.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Pressure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/Pressure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/PresImcDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/PresImcDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/WeightDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/WeightDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/WeightToday.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/model/entities_beans/WeightToday.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/htk_final/testes/testes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/htk_final/testes/testes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DashboardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ExercisesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ExercisesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FoodServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FoodServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GoalsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GoalsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/HydraServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HydraServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/WeightTodayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/WeightTodayServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/EatHabitsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/EatHabitsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/PressureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/PressureDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OracleEatHabitsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleEatHabitsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OracleExercisesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleExercisesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OracleGoalsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleGoalsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OraclePressureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OraclePressureDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OracleUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO/impl/OracleWeightTodayDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO/impl/OracleWeightTodayDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/BusinessPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/BusinessPlan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/EatHabits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/EatHabits.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/EatHabitsDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/EatHabitsDashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/ExerciseDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/ExerciseDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entities_beans/Exercises.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/Exercises.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entities_beans/Goals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/Goals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/HydraDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/HydraDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entities_beans/Hydration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/Hydration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/PresImcDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/PresImcDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entities_beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entities_beans/WeightDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/WeightDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/service/ImcCaculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/service/ImcCaculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testes/testes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testes/testes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/CriptografiaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/CriptografiaUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css_customized/customizedAll.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css_customized/customizedAll.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entities_beans/WeightToday.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities_beans/WeightToday.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/goals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/goals.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/menu_interno.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/menu_interno.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/my_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/my_account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/my_day_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/my_day_page.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -361,7 +287,7 @@
       <workItem from="1573766647905" duration="102001000" />
       <workItem from="1574016038064" duration="107000" />
       <workItem from="1574076503259" duration="16122000" />
-      <workItem from="1574119607234" duration="293000" />
+      <workItem from="1574119607234" duration="3576000" />
     </task>
     <servers />
   </component>
@@ -380,16 +306,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/DashboardServlet.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

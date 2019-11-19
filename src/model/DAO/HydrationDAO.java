@@ -11,6 +11,6 @@ public interface HydrationDAO {
     boolean create(Hydration hydration, Long cpf_id) throws DBException;
 
     //ler os dados de uma data específica. Usado no dashboard.
-    List<Hydration> readWeight(Calendar date, Long cpf_id) throws DBException;
+    List<Hydration> readHydra(Calendar date, Long cpf_id) throws DBException;
 
 }

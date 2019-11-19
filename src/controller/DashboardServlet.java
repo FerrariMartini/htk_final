@@ -45,12 +45,9 @@ public class DashboardServlet extends HttpServlet {
             User loggedUser = (User) session.getAttribute("user");
             req.setAttribute("uName", loggedUser.getName());
 
-            Calendar today = (Calendar) session.getAttribute("dateToday");
+//            Calendar today = (Calendar) session.getAttribute("dateToday");
 //            System.out.println("DATA VINDA DO LOGIN É: " + today);
 //            System.out.println("Typo: " + today instanceof Object);
-
-            doPost(req, resp, loggedUser, today);
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,33 +57,69 @@ public class DashboardServlet extends HttpServlet {
     }
 
 
-    private void doPost(HttpServletRequest req, HttpServletResponse resp, User loggedUser, Calendar today) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Calendar dt;
-            String dateToday = req.getParameter("dateToday");
 
-            if (dateToday == null) {
-                dt = today;
-            } else {
-                dt = Calendar.getInstance();
-                dt.setTime(sfd.parse(dateToday));
-            }
+            HttpSession session = req.getSession();
+            User loggedUser = (User) session.getAttribute("user");
+            req.setAttribute("uName", loggedUser.getName());
+
+            String dateToday = req.getParameter("dateToday");
+//
+//            if (dateToday == null) {
+//                dt = today;
+//            } else {
+//                dt = Calendar.getInstance();
+//                dt.setTime(sfd.parse(dateToday));
+//            }
+
+            dt = Calendar.getInstance();
+            dt.setTime(sfd.parse(dateToday));
 
             System.out.println("CHAMANDO O POST ----- ESTOU AQUI!");
 
             Long userId = loggedUser.getCpf_id();
 
             List<WeightToday> weightDB = daoWeight.readWeight(dt, userId);
+            System.out.println("Tamanho da lista é: " + weightDB.size());
+            for (WeightToday item : weightDB) {
+                System.out.println(item.getCode());
+            }
 
             List<Pressure> pressureDB = daoPressure.read(dt, userId);
+            System.out.println("Tamanho da lista é: " + pressureDB.size());
+            for (Pressure item : pressureDB) {
+                System.out.println(item.getCode());
+            }
 
             List<Exercises> exerciseDB = daoEx.read(dt, userId);
+            System.out.println("Tamanho da lista é: " + exerciseDB.size());
+            for (Exercises item : exerciseDB) {
+                System.out.println(item.getCode());
+            }
+
 
             List<EatHabits> foodDB = daoFood.read(dt, userId);
+            System.out.println("Tamanho da lista é: " + foodDB.size());
+            for (EatHabits item : foodDB) {
+                System.out.println(item.getCode());
+            }
+
 
             List<Goals> goalDB = daoGoal.readGoals(userId);
+            System.out.println("Tamanho da lista é: " + goalDB.size());
+            for (Goals item : goalDB) {
+                System.out.println(item.getCode());
+            }
 
-            List<Hydration> hydraDB = daoHydra.readWeight(dt, userId);
+
+            List<Hydration> hydraDB = daoHydra.readHydra(dt, userId);
+            System.out.println("Tamanho da lista é: " + hydraDB.size());
+            for (Hydration item : hydraDB) {
+                System.out.println(item.getId());
+            }
+
 
             //construindo os dados sobre PESO que serão levados para o dashboard.
             boolean scW = buildWeightDashboard(req, loggedUser, weightDB, goalDB);
@@ -267,3 +300,4 @@ public class DashboardServlet extends HttpServlet {
         return goal;
     }
 }
+

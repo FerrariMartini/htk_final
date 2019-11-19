@@ -67,5 +67,16 @@ public class Exercises implements Serializable {
     public void setDay(Calendar day) {
         this.day = day;
     }
+
+    @Override
+    public String toString() {
+        return "Exercises{" +
+                "code=" + code +
+                ", exercises='" + exercises + '\'' +
+                ", time=" + time +
+                ", calories=" + calories +
+                ", day=" + day +
+                '}';
+    }
 }
 
