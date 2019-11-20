@@ -22,7 +22,7 @@
 <body>
 <div class="container-fluid">
     <header>
-        <%@include file="menu_interno.jsp"%>
+        <%@include file="menu_interno.jsp" %>
     </header>
 
     <main>
@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" id="exercises_goal" placeholder="3.600"
-                                           name="eg">
+                                           name="eg" value="${requestScope.goals.get(0)}">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Calorias queimadas/dia</small>
@@ -92,23 +92,6 @@
                                     <small>Litros ingeridos/dia</small>
                                 </div>
                             </div>
-
-<%--                            <div class="flex-column">--%>
-<%--                                <label for="hydration_goals">&nbsp;IMC Ideal</label>--%>
-<%--                                <div class="input-group mb-2">--%>
-<%--                                    <div class="input-group-prepend">--%>
-<%--                                        <div class="input-group-text"><i--%>
-<%--                                                class="fas fa-glass-whiskey icon_gray"></i>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                    <input type="text" class="form-control" id="icm_goals" placeholder="25,1"--%>
-<%--                                           name="i">--%>
-<%--                                </div>--%>
-<%--                                <div class="mb-3 text-right">--%>
-<%--                                    <small>fórmula: peso/(altura * altura)</small>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-
                             <div class="flex-column">
                                 <label for="weight_goals">&nbsp;Meu Peso Ideal</label>
                                 <div class="input-group mb-2">
@@ -117,7 +100,8 @@
                                                 class="fas fa-weight icon_gray"></i>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" id="weight_goals" placeholder="84" name="wg">
+                                    <input type="text" class="form-control" id="weight_goals" placeholder="84"
+                                           name="wg">
                                 </div>
                                 <div class="mb-3 text-right">
                                     <small>Kilos</small>
@@ -125,9 +109,6 @@
                             </div>
                         </div>
                         <div class="card-footer card_footer_my_day">
-                            <button type="button" class="btn btn-lg">
-                                <i class="material-icons md20 icon_gray" id="update">create</i>
-                            </button>
                             <button type="submit" class="btn btn-success btn-sm" id="save">SALVAR</button>
                         </div>
                     </form>
@@ -138,7 +119,7 @@
 </div>
 <script src="js/jquery-3.4.1.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<%--<script src="js/goals.js"></script>--%>
+<script src="js/goals.js"></script>
 
 </body>
 </html>

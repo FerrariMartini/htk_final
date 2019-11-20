@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.card-body {
+.dash_card_body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 0.5rem;

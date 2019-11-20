@@ -2,7 +2,6 @@ package factory;
 
 import model.DAO.*;
 import model.DAO.impl.*;
-import model.entities_beans.EatHabits;
 
 public class DAOFactory {
 
@@ -30,7 +29,13 @@ public class DAOFactory {
         return new OracleHydrationDAO();
     }
 
-    public static EatHabitsDAO getEatHabitsDAO(){ return new OracleEatHabitsDAO();}
+    public static EatHabitsDAO getEatHabitsDAO() {
+        return new OracleEatHabitsDAO();
+    }
+
+    public static EmContDAO getECDAO() {
+        return new OracleEmeContDAO();
+    }
 
 
 }

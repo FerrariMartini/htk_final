@@ -4,7 +4,6 @@ import factory.DAOFactory;
 import model.DAO.*;
 import model.entities_beans.*;
 import model.service.ImcCaculation;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -157,7 +156,10 @@ public class DashboardServlet extends HttpServlet {
 
     private boolean buildHydra(HttpServletRequest req, List<Hydration> hydraDB, List<Goals> goalDB) {
         String type = TypeGoals.NIVEL_HIDRATACAO.toString();
-        int qtdGlassDB = hydraDB.size();
+        int qtdGlassDB = 0;
+        for (Hydration qtd : hydraDB) {
+            qtdGlassDB += qtd.getUnit();
+        }
 
         double gainHydraDB = 0;
         for (Hydration qtd : hydraDB) {
@@ -217,16 +219,16 @@ public class DashboardServlet extends HttpServlet {
             lostCalories += exercises.getCalories();
         }
 
-        //TODO - preciso desenvolver a soma de tempo do calendário.
         double goalExerciseDB = 0;
         goalExerciseDB = getGoals(goalDB, goalExerciseDB, type);
 
-        Calendar timeExercisesDB = null;
-        for (Exercises exercises : exerciseDB) {
-//            System.out.println("TEMPO DO EXERCICIO VEM ASSIM" + exercises.getTime());
-        }
+        Calendar tDB = Calendar.getInstance();
 
-        ExerciseDashboard ed = new ExerciseDashboard(goalExerciseDB, lostCalories, qtdExercisesDB, timeExercisesDB);
+//        for (Exercises exercises : exerciseDB) {
+//            System.out.println("TEMPO DO EXERCICIO VEM ASSIM" + exercises.getTime());
+//        }
+
+        ExerciseDashboard ed = new ExerciseDashboard(goalExerciseDB, lostCalories, qtdExercisesDB, null);
 
         System.out.println(ed.toString());
 

@@ -16,7 +16,7 @@ public final class User extends People implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Calendar birthday;
-    private Character gender;
+    private String gender;
     private String pwd;
     private Double initWeight;
     private Double initHeight;
@@ -24,7 +24,7 @@ public final class User extends People implements Serializable {
     private BusinessPlan type;
 
     public User(Long id, String name, String lastName, String phone, String email,
-                Calendar birthday, Character gender, String pwd, Double initWeight, Double initHeight,
+                Calendar birthday, String gender, String pwd, Double initWeight, Double initHeight,
                 BusinessPlan type) {
         super(id, name, lastName, phone, email);
         this.birthday = birthday;
@@ -41,7 +41,7 @@ public final class User extends People implements Serializable {
         return birthday;
     }
 
-    public Character getGender() {
+    public String getGender() {
         return gender;
     }
 

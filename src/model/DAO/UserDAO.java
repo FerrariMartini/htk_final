@@ -10,7 +10,9 @@ public interface UserDAO {
 
     User read(String email, String pwd) throws DBException;
 
-    void update(User user) throws DBException;
+    void update(String email, String phone, String plano, Long cpf_id) throws DBException;
 
     void delete(Long cpfId, String pwd) throws DBException;
+
+    void upPwd(String userPwd, Long cpf_id) throws DBException;
 }

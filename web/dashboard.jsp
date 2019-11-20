@@ -78,7 +78,7 @@
             <div class="row justify-content-around">
                 <!-- PESO -->
                 <div class="card dashboard_card" id="peso">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <div class="row no-gutters align-items-end">
                             <div class="col-auto goal-text borderBottom-customized">
                                 <i class="fas fa-bullseye"></i>&nbsp;sua META é:
@@ -155,7 +155,7 @@
 
                 <!-- Exercicios -->
                 <div class="card dashboard_card" id="Exercises">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="flex-column goal-text borderBottom-customized">
@@ -212,11 +212,6 @@
                             <div class="justify-content-center">
                                 <i class="fas fa-stopwatch md48 icon_gray"></i>
                                 <br/>
-                                <c:if test="${not empty exerciseDash}">
-                                    <div class="container text-center">
-                                        <small class="text-qtd">${exerciseDash.timeExercises}</small>
-                                    </div>
-                                </c:if>
                                 <c:if test="${empty exerciseDash}">
                                     <div class="container text-center">
                                         <small class="text-qtd">${"3h40min"}</small>
@@ -232,7 +227,7 @@
             <div class="row justify-content-center">
                 <!-- IMC -->
                 <div class="card dashboard_card">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">
@@ -306,7 +301,7 @@
             <div class="row justify-content-around mb-5">
                 <!-- Calorias -->
                 <div class="card align-items-center dashboard_card" id="calorias">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">
@@ -398,7 +393,7 @@
 
                 <!-- ÁGUA -->
                 <div class="card dashboard_card" id="agua">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">

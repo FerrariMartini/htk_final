@@ -56,7 +56,9 @@
                         <small id="pwdHelp" class="form-text text-muted">ex: Jps325654</small>
                         <small id="validPwdMsg" class="validStyle"></small>
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">ACESSAR</button>
+                    <div>
+                        <button type="submit" class="btn btn-success btn-block">ACESSAR</button>
+                    </div>
                 </form>
 
                 <a href="#" class="btn btn-link btn-sm col-12" role="button">Recuperar minha

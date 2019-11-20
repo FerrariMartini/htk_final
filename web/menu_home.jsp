@@ -16,7 +16,7 @@
 
         <div class="phone_container">
             <i id="phoneIcon" class="fas fa-phone-alt icon_color md20 mt-2"></i>
-            <a class="nav-link" href="tel:3030-1234">3030-1234</a>
+            <a class="nav-link" href="tel:(11)95842-8900">3030-1234</a>
         </div>
 
 

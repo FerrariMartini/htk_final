@@ -1,7 +1,9 @@
 package controller;
 
 import factory.DAOFactory;
+import model.DAO.EmContDAO;
 import model.DAO.UserDAO;
+import model.entities_beans.EmergencyContact;
 import model.entities_beans.User;
 
 import javax.servlet.ServletException;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet("/Logar")
 public class LoginServlet extends HttpServlet {
@@ -22,9 +25,11 @@ public class LoginServlet extends HttpServlet {
     private SimpleDateFormat sfd = new SimpleDateFormat("dd/MM/yyyy");
 
     private UserDAO dao;
+    private EmContDAO daoEC;
 
     public void init() throws ServletException {
         dao = DAOFactory.getUserDAO();
+        daoEC = DAOFactory.getECDAO();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,6 +42,7 @@ public class LoginServlet extends HttpServlet {
 
             //Recupera USER do DB pela validacao do email
             User loggedUser = dao.read(email, pwd);
+            EmergencyContact emergencyContact = daoEC.read(loggedUser.getCpf_id());
 
             //Dados da query do DB via DAO
             String loginDAO = loggedUser.getEmail();
@@ -45,6 +51,7 @@ public class LoginServlet extends HttpServlet {
             if (email.equals(loginDAO) && pwd.equals(pwdDAO)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", loggedUser);
+                session.setAttribute("ec", emergencyContact);
 
                 Date todayD = new Date();
                 String todayS = sfd.format(todayD);

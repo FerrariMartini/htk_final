@@ -66,8 +66,8 @@
                                 <div class="form-group col-md-6">
                                     <label for="gender">Genero Biológico</label>
                                     <select class="form-control" id="gender" required name="gender">
-                                        <option value="m">Masculino</option>
-                                        <option value="f">Feminino</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Feminino">Feminino</option>
                                     </select>
                                 </div>
                             </div>
@@ -151,10 +151,10 @@
                                 <div class="form-group">
                                     <label for="getKinship">Parentesco</label>
                                     <select id="getKinship" class="custom-select" name="kinship" required>
-                                        <option value="filho">Filho/Filha</option>
-                                        <option value="pais">Pai/Mãe</option>
-                                        <option value="conjuge">Cônjunge</option>
-                                        <option value="outros">Outros</option>
+                                        <option value="Filho/Filha">Filho/Filha</option>
+                                        <option value="Pai/Mãe">Pai/Mãe</option>
+                                        <option value="Cônjunge">Cônjunge</option>
+                                        <option value="Outros">Outros</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -214,7 +214,6 @@
             </div>
         </form>
     </main>
-
     <!--	Rodapé-->
     <footer class="nav navbar-expand navbar-light">
         <%@include file="footer_home.jsp" %>

@@ -7,7 +7,6 @@ import model.DBException.DBException;
 import model.entities_beans.BusinessPlan;
 import model.entities_beans.EmergencyContact;
 import model.entities_beans.User;
-import sun.util.calendar.BaseCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -50,7 +49,7 @@ public class RegisterServlet extends HttpServlet {
             birthday.setTime(sfd.parse(bt));
 
 
-            char gender = req.getParameter("gender").charAt(0);
+            String gender = req.getParameter("gender");
             String pwd = req.getParameter("pwd");
             BusinessPlan type = new BusinessPlan(req.getParameter("priceType"));
             Double initWeight = Double.parseDouble(req.getParameter("weight").replace(",", "."));
@@ -64,7 +63,7 @@ public class RegisterServlet extends HttpServlet {
             String emEmail = req.getParameter("emEmail");
             String emkinship = req.getParameter("kinship");
 
-            EmergencyContact newEmeContact = new EmergencyContact(0L, emName, emLastName, emPhone, emEmail, emkinship);
+            EmergencyContact newEmeContact = new EmergencyContact(0, emName, emLastName, emPhone, emEmail, emkinship, newUser.getCpf_id());
 
             System.out.println(newUser.toString());
             System.out.println(newEmeContact.toString());

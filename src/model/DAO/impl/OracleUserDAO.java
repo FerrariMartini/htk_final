@@ -6,11 +6,13 @@ import model.db_connection_singleton.DBConnectManager;
 import model.entities_beans.BusinessPlan;
 import model.entities_beans.EmergencyContact;
 import model.entities_beans.User;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class OracleUserDAO implements UserDAO {
@@ -45,7 +47,7 @@ public class OracleUserDAO implements UserDAO {
             stmt.setString(3, user.getLastName());
             java.sql.Date birthdayDate = new java.sql.Date(user.getBirthday().getTimeInMillis());
             stmt.setDate(4, birthdayDate);
-            stmt.setString(5, String.valueOf(user.getGender()));
+            stmt.setString(5, user.getGender());
             stmt.setString(6, user.getEmail());
             stmt.setString(7, user.getPwd());
             stmt.setDouble(8, user.getInitWeight());
@@ -95,7 +97,7 @@ public class OracleUserDAO implements UserDAO {
      * @return: deve retornar um valor booleano notificando se os dados foram salvo ou não.
      */
     @Override
-    public void update(User user) throws DBException {
+    public void update(String email, String phone, String plano, Long cpf_id) throws DBException {
 
 
         try {
@@ -103,10 +105,10 @@ public class OracleUserDAO implements UserDAO {
 
             sql = "UPDATE T_HT_USER SET ds_email=? , nr_phone= ?, ds_plano = ?  WHERE cd_cpf = ?";
             stmt = connection.prepareStatement(sql);
-            stmt.setString(1, user.getEmail());
-            stmt.setString(2, user.getPhone());
-            stmt.setString(3, user.getType());
-            stmt.setLong(4, user.getCpf_id());
+            stmt.setString(1, email);
+            stmt.setString(2, phone);
+            stmt.setString(3, plano);
+            stmt.setLong(4, cpf_id);
 
             stmt.executeUpdate();
 
@@ -179,7 +181,7 @@ public class OracleUserDAO implements UserDAO {
                 java.sql.Date dtBirthday = rs.getDate("dt_nasc");
                 Calendar btdDb = Calendar.getInstance();
                 btdDb.setTimeInMillis(dtBirthday.getTime());
-                char genderDb = rs.getString("ds_sexo").charAt(0);
+                String genderDb = rs.getString("ds_sexo");
                 String emailDb = rs.getString("ds_email");
                 String pwdDb = rs.getString("nm_senha");
                 Double weightDb = rs.getDouble("vl_peso_init");
@@ -189,6 +191,7 @@ public class OracleUserDAO implements UserDAO {
                 String planDb = rs.getString("ds_plano");
 
                 BusinessPlan bp = new BusinessPlan(planDb);
+
 
                 userRead = new User(idDb, nameDb, lastNameDb, phoneDb, emailDb, btdDb, genderDb, pwdDb, weightDb, heightDb, bp);
 
@@ -207,5 +210,31 @@ public class OracleUserDAO implements UserDAO {
         }
 
         return userRead;
+    }
+
+    @Override
+    public void upPwd(String userPwd, Long cpf_id) throws DBException {
+
+        try {
+            connection = DBConnectManager.getConnection();
+
+            sql = "UPDATE T_HT_USER SET nm_senha = ? WHERE cd_cpf = ?";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, userPwd);
+            stmt.setLong(2, cpf_id);
+
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new DBException("Erro ao atualizar a senha");
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

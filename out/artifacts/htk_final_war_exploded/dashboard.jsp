@@ -212,11 +212,6 @@
                             <div class="justify-content-center">
                                 <i class="fas fa-stopwatch md48 icon_gray"></i>
                                 <br/>
-                                <c:if test="${not empty exerciseDash}">
-                                    <div class="container text-center">
-                                        <small class="text-qtd">${exerciseDash.timeExercises}</small>
-                                    </div>
-                                </c:if>
                                 <c:if test="${empty exerciseDash}">
                                     <div class="container text-center">
                                         <small class="text-qtd">${"3h40min"}</small>

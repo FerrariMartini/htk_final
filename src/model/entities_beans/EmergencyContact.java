@@ -9,13 +9,15 @@ package model.entities_beans;
 
 public final class EmergencyContact extends People {
     private String kinship;
+    private Integer code;
 
     public EmergencyContact() {
     }
 
-    public EmergencyContact(Long id, String name, String lastName, String phone, String email, String kinship) {
-        super(id, name, lastName, phone, email);
+    public EmergencyContact(Integer code, String name, String lastName, String phone, String email, String kinship, Long cpf_id) {
+        super(cpf_id, name, lastName, phone, email);
         this.kinship = kinship;
+        this.code = code;
     }
 
     public String getKinship() {
@@ -24,6 +26,10 @@ public final class EmergencyContact extends People {
 
     public void setKinship(String kinship) {
         this.kinship = kinship;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 
     @Override

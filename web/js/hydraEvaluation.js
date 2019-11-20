@@ -1,41 +1,57 @@
-window.onload = function () {
+var hydraType = document.querySelector("#kind_hydration");
+var unidField = document.querySelector("#unit_water");
+var qtdField = document.querySelector("#qtd_water");
+var qtdF = 0;
+var lit = 0;
 
-    var hydraType = document.querySelector("#kind_hydration");
-    var unidField = document.querySelector("#unit_water");
-    var qtdField = document.querySelector("#qtd_water");
-    var qtdF = 0;
+console.log("esse é a hydra " + hydraType.value);
 
-    console.log("esse é a hydra " + hydraType.value);
+$(hydraType).change(function () {
 
-    $(hydraType).change(function () {
-        if (hydraType.value === "copo") {
-            qtdF = 250 * unidField.value;
-        } else if (hydraType.value === "pet500") {
-            qtdF = 500 * unidField.value;
-        } else {
-            qtdF = (1000 * unidField.value) / 1000;
-        }
-        console.log("esse é a hydra ONCHANGE: " + hydraType.value + " qtd total: " + qtdF);
+    if (hydraType.value === "copo") {
+        lit = 250;
+        convertL(unidField.value, lit);
+    }
 
-        qtdField.value = qtdF;
-        // qtdField.textContent = qtdF;
+    if (hydraType.value === "pet500") {
+        lit = 500;
+        convertL(unidField.value, lit);
+    }
+
+    if (hydraType.value === "pet1") {
+        lit = 1000;
+        convertL(unidField.value, lit);
+    }
+    console.log("esse é a hydra ONCHANGE: " + hydraType.value + " qtd total: " + qtdF);
 
 
+    qtdField.value = qtdF;
+});
 
-    });
+$(unidField).change(function () {
 
-    $(unidField).change(function () {
-        if (hydraType.value === "copo") {
-            qtdF = 250 * unidField.value;
-        } else if (hydraType.value === "pet500") {
-            qtdF = 500 * unidField.value;
-        } else {
-            qtdF = (1000 * unidField.value) / 1000;
-        }
-        console.log("esse é a hydra ONCHANGE: " + hydraType.value + " qtd total em ml: " + qtdF);
+    if (hydraType.value === "copo") {
+        lit = 250;
+        convertL(unidField.value, lit);
+    }
 
-        qtdField.value = qtdF;
+    if (hydraType.value === "pet500") {
+        lit = 500;
+        convertL(unidField.value, lit);
+    }
 
-    });
+    if (hydraType.value === "pet1") {
+        lit = 1000;
+        convertL(unidField.value, lit);
+    }
 
-};
+    console.log("esse é a hydra ONCHANGE: " + hydraType.value + " qtd total em ml: " + qtdF);
+
+    qtdField.value = qtdF;
+});
+
+
+function convertL(unit, lit) {
+    qtdF = (lit * unit) / 1000;
+    return qtdF
+}

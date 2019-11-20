@@ -777,7 +777,7 @@
                                                        aria-describedby="qtd_water" placeholder="10" required>
                                             </div>
                                             <div class="form-group col-auto">
-                                                <label class="" for="qtd_water">Quantidade (l/ml)</label>
+                                                <label class="" for="qtd_water">Quantidade (litro)</label>
                                                 <input type="text" class="form-control text-center" id="qtd_water"
                                                        name="qtd_hydra"
                                                        aria-describedby="qtd_water" readonly>
@@ -806,12 +806,11 @@
 </div>
 <script src="js/jquery-3.4.1.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<%--<script src="js/my_day.js"></script>--%>
 <script src="js/hydraEvaluation.js"></script>
 <script src="js/jquery-ui/jquery-ui.min.js"></script>
 <script src="js/widgets/datepicker.js"></script>
 <script src="js/updateDay.js"></script>
-
+<script src="js/my_day.js"></script>
 
 </body>
 </html>

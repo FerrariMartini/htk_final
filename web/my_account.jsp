@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="model.entities_beans.User" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,72 +30,86 @@
 
     <!--Sessão de form-->
     <main class="account_wrap">
-        <div class="container account_title"></div>
+        <% session.getAttribute("user"); %>
+        <div class="container account_title">
+            <div>
+                <c:if test="${not empty sucess}">
+                    <div class="alert alert-success text-center">${sucess}</div>
+                </c:if>
+                <c:if test="${not empty err}">
+                    <div class="alert alert-danger text-center">${err}</div>
+                </c:if>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="card account-card-container">
-                <div class="card-header">
-                    MEUS DADOS
-                </div>
-                <div class="card-body">
-                    <form>
+                <form id="user-form" action="MinhaConta" method="post">
+                    <input type="hidden" class="hidden" value="userForm" name="formOption">
+                    <div class="card-header">
+                        MEUS DADOS
+                    </div>
+                    <div class="card-body">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="getFirstName">Nome</label>
-                                <input type="text" class="form-control" id="getFirstName" placeholder="José" required
-                                       disabled>
-
+                                <input type="text" class="form-control" id="getFirstName"
+                                       value="${sessionScope.user.name}" disabled required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="getLastName">Sobrenome</label>
-                                <input type="text" class="form-control" id="getLastName" placeholder="Lins da Silva"
-                                       required disabled>
+                                <input type="text" class="form-control" id="getLastName"
+                                       value="${sessionScope.user.lastName}" disabled required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="birthday">Data de Nascimento</label>
-                                <input type="date" class="form-control" id="birthday" required disabled>
+                                <input type="text" class="form-control" id="birthday"
+                                    <% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                                     User loggedUser = (User) session.getAttribute("user");
+                                     String dt = sdf.format(loggedUser.getBirthday().getTime());
+                                     session.setAttribute("dt", dt);%>
+                                       value="${sessionScope.dt}" disabled required>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="gender">Genero Biológico</label>
-                                <select class="form-control" id="gender" required disabled>
-                                    <option>Masculino</option>
-                                    <option>Feminino</option>
+                                <select class="form-control" id="gender" disabled required>
+                                    <option value="Masculino">${sessionScope.user.gender}</option>
+                                    <option value="Feminino">${sessionScope.user.gender}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="getWeigth">Peso Inicial</label>
-                                <input type="text" class="form-control" id="getWeigth" placeholder="89,9" required
-                                       disabled>
-
+                                <input type="text" class="form-control" id="getWeigth"
+                                       value="${sessionScope.user.initWeight}" disabled required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="getHeight">Altura</label>
-                                <input type="text" class="form-control" id="getHeight" placeholder="1,90" required
-                                       disabled>
+                                <input type="text" class="form-control" id="getHeight"
+                                       value="${sessionScope.user.initHeight}" disabled required>
                             </div>
-
                             <div class="form-group col-md-4">
                                 <label for="showIMC">IMC Inicial</label>
-                                <input type="text" class="form-control" id="showIMC" placeholder="25,6" required
-                                       disabled>
+                                <input type="text" class="form-control" id="showIMC" disabled required
+                                       value="${sessionScope.user.initIMC}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="getPhone">Telefone/Celular</label>
-                            <input type="tel" class="form-control" id="getPhone"
-                                   placeholder="(11) 95842-8900" required disabled>
+                            <input type="tel" class="form-control" id="getPhone" name="userPhone"
+                                   value="${sessionScope.user.phone}" required>
                             <small class="validStyle msg"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="getUserEmail">E-mail</label>
-                            <input type="email" class="form-control" id="getUserEmail" placeholder="josesilva@gmail.com"
-                                   required disabled>
+                            <input type="email" class="form-control" id="getUserEmail" name="userEmail"
+                                   value="${sessionScope.user.email}"
+                                   required>
                             <small class="validStyle msg"></small>
                         </div>
 
@@ -99,110 +117,131 @@
                         <p>Tipo de Plano Atual</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="priceType" id="free"
-                                   value="option1" disabled>
+                                   value="free" required>
                             <label class="form-check-label" for="free">
                                 Gratuito - com restrição de funcionalidades
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="priceType" id="premium"
-                                   value="option2" checked disabled>
+                                   value="premium" checked required>
                             <label class="form-check-label" for="premium">
                                 Premium - completa por apenas R$ 4,99/mês.
                             </label>
                         </div>
                         <br>
                         <div class="container format_buttons">
-                            <button id="update_user" type="button" class="btn btn-warning">Alterar</button>
-                            <button type="submit" class="btn btn-success">Salvar</button>
+                            <button form="user-form" type="submit" class="btn btn-warning">Alterar Usuário
+                            </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
 
             <div>
+                <% session.getAttribute("ec"); %>
                 <div class="card account-card-container">
-                    <div class="card-header">
-                        DADOS DO CONTATO DE EMERGÊNCIA
-                    </div>
-                    <div class="card-body">
-                        <form>
+                    <form id="ec-form" action="MinhaConta" method="post">
+                        <input type="hidden" class="hidden" value="ecForm" name="formOption">
+                        <div class="card-header">
+                            DADOS DO CONTATO DE EMERGÊNCIA
+                        </div>
+                        <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="getFirstNameEmergency">Nome</label>
-                                    <input type="text" class="form-control" id="getFirstNameEmergency"
-                                           placeholder="Maria" required disabled>
+                                    <input type="text" class="form-control" id="getFirstNameEmergency" name="ecName"
+                                           value="${sessionScope.ec.name}" required>
                                     <small class="validStyle msg"></small>
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label for="getLastNameEmergency">Sobrenome</label>
-                                    <input type="text" class="form-control" id="getLastNameEmergency"
-                                           placeholder="Lins da Silva" required disabled>
+                                    <input type="text" class="form-control" id="getLastNameEmergency" name="ecLastName"
+                                           value="${sessionScope.ec.lastName}" required>
                                     <small class="validStyle msg"></small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <lable for="getKinship">Parentesco</lable>
-                                <select id="getKinship" class="custom-select" required disabled>
-                                    <option>Filho/Filha</option>
-                                    <option>Pai/Mãe</option>
-                                    <option>Cônjunge</option>
-                                    <option>Outros</option>
+                                <label for="getKinship">Parentesco</label>
+                                <select id="getKinship" class="custom-select" name="eckinship">
+                                    <c:if test="${sessionScope.ec.kinship.equals('Filho/Filha')}">
+                                        <option value="Filho/Filha">${sessionScope.ec.kinship}</option>
+                                    </c:if>
+                                    <option value="Filho/Filha">Filho/Filha</option>
+
+                                    <c:if test="${sessionScope.ec.kinship.equals('Pai/Mãe')}">
+                                        <option value="Pai/Mãe">${sessionScope.ec.kinship}</option>
+                                    </c:if>
+                                    <option value="Pai/Mãe">Pai/Mãe</option>
+
+                                    <c:if test="${sessionScope.ec.kinship.equals('Cônjunge')}">
+                                        <option value="Cônjunge">${sessionScope.ec.kinship}</option>
+                                    </c:if>
+                                    <option value="Cônjunge">Cônjunge</option>
+
+                                    <c:if test="${sessionScope.ec.kinship.equals('Outros')}">
+                                        <option value="Outros">${sessionScope.ec.kinship}</option>
+                                    </c:if>
+                                    <option value="Outros">Outros</option>
+
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="getEmailEmergency">E-mail</label>
-                                <input type="email" class="form-control" id="getEmailEmergency"
-                                       placeholder="marias.oliveira@gmail.com" required disabled>
+                                <input type="email" class="form-control" id="getEmailEmergency" name="ecEmail"
+                                       value="${sessionScope.ec.email}" required>
                                 <small class="validStyle msg"></small>
                             </div>
-
-
                             <div class="form-group">
                                 <label for="getPhoneEmergency">Telefone/Celular</label>
-                                <input type="tel" class="form-control" id="getPhoneEmergency"
-                                       placeholder="(11)95842-8900" required disabled>
+                                <input type="tel" class="form-control" id="getPhoneEmergency" name="ecPhone"
+                                       value="${sessionScope.ec.phone}" required>
                                 <small class="validStyle msg"></small>
                             </div>
                             <div class="container format_buttons">
-                                <button id="update_emer" type="button" class="btn btn-warning">Alterar</button>
-                                <button type="button" class="btn btn-success">Salvar</button>
+                                <button form="ec-form" type="submit" class="btn btn-warning">Alterar Contato</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="card account-card-container">
-                    <div class="card-header">
-                        ALTERAR SENHA
-                    </div>
-                    <div class="card-body">
-                        <form>
+                    <form id="pwd-form" action="MinhaConta" method="post">
+                        <input type="hidden" class="hidden" value="pwdForm" name="formOption">
+                        <div class="card-header">
+                            ALTERAR SENHA
+                        </div>
+                        <div class="card-body">
                             <div class="form-group">
                                 <label for="getOldPwd">Senha Atual</label>
-                                <input type="email" class="form-control" id="getOldPwd" placeholder="Jsc98320Silva"
+                                <input type="text" class="form-control" id="getOldPwd"
+                                       value="${sessionScope.user.pwd}"
                                        required disabled>
-                                <small id="pwdOldHelper" class="form-text text-muted">Senha com mínimo de 4 caracteres
+                                <small id="pwdOldHelper" class="form-text text-muted">Senha com mínimo de 4
+                                    caracteres
                                 </small>
                                 <small class="validStyle msg"></small>
 
                             </div>
                             <div class="form-group">
                                 <label for="getNewPwd">Senha Nova</label>
-                                <input type="email" class="form-control" id="getNewPwd" placeholder="Jsc98320Silva"
-                                       required disabled>
-                                <small id="pwdNewHelper" class="form-text text-muted">Senha com mínimo de 4 caracteres
+                                <input type="text" class="form-control" id="getNewPwd"
+                                       placeholder="Jsc98320Silva" name="newUserPWD"
+                                       required>
+                                <small id="pwdNewHelper" class="form-text text-muted">Senha com mínimo de 4
+                                    caracteres
                                 </small>
                                 <small class="validStyle msg"></small>
 
                             </div>
                             <div class="container format_buttons">
-                                <button id="update_pwd" type="button" class="btn btn-warning mr-0">Alterar</button>
+                                <button type="submit" form="pwd-form" class="btn btn-warning">Alterar Senha
+                                </button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -213,3 +252,4 @@
 <script src="js/my_account.js"></script>
 </body>
 </html>
+

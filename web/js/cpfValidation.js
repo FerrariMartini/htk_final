@@ -1,27 +1,25 @@
-window.onload = function () {
+var cpfField = document.querySelector("validCPF");
+var cpf = document.querySelector("getCPF");
 
-    var cpfField = document.querySelector("validCPF");
-    var cpf = document.querySelector("getCPF");
-
-    cpf.onblur = function () {
-        if (TestaCPF(cpf)) {
-            cpf.style.borderColor = "#228B22";
-            cpf.style.color = "#228B22";
-            cpfField.innerHTML = validMsg;
-        } else {
-            cpf.style.borderColor = "#FF0000";
-            cpf.style.color = "#FF0000";
-            cpfField.innerHTML = invalidMsg;
-            cpfField.className = "invalidStyle";
-        }
-    };
-
-    cpf.onfocus = function () {
-        cpf.style.borderColor = "";
-        cpfField.innerHTML = "";
-        cpfField.className = "validStyle";
-    };
+cpf.onblur = function () {
+    if (TestaCPF(cpf)) {
+        cpf.style.borderColor = "#228B22";
+        cpf.style.color = "#228B22";
+        cpfField.innerHTML = validMsg;
+    } else {
+        cpf.style.borderColor = "#FF0000";
+        cpf.style.color = "#FF0000";
+        cpfField.innerHTML = invalidMsg;
+        cpfField.className = "invalidStyle";
+    }
 };
+
+cpf.onfocus = function () {
+    cpf.style.borderColor = "";
+    cpfField.innerHTML = "";
+    cpfField.className = "validStyle";
+};
+
 
 /**
  * @return {boolean}
