@@ -1,4 +1,5 @@
 window.onload = function () {
+
     var fieldsDayList = document.querySelectorAll(".hidden");
     var obPicker = document.querySelector('#current_date');
 

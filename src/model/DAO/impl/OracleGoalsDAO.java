@@ -61,7 +61,6 @@ public class OracleGoalsDAO implements GoalsDAO {
             connection = DBConnectManager.getConnection();
 
 
-
             sql = "SELECT * FROM T_HT_META WHERE CD_CPF = ?";
 
             stmt = connection.prepareStatement(sql);

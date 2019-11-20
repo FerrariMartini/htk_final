@@ -2,7 +2,6 @@ package model.entities_beans;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.List;
 
 /**
  * Classe que cria o objeto exercicio.

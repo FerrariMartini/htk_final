@@ -4,6 +4,7 @@ import factory.DAOFactory;
 import model.DAO.*;
 import model.entities_beans.*;
 import model.service.ImcCaculation;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,9 +46,7 @@ public class DashboardServlet extends HttpServlet {
             User loggedUser = (User) session.getAttribute("user");
             req.setAttribute("uName", loggedUser.getName());
 
-//            Calendar today = (Calendar) session.getAttribute("dateToday");
-//            System.out.println("DATA VINDA DO LOGIN É: " + today);
-//            System.out.println("Typo: " + today instanceof Object);
+            System.out.println("OLÁ GET? -----> ESTOU AQUI!");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,93 +65,54 @@ public class DashboardServlet extends HttpServlet {
             req.setAttribute("uName", loggedUser.getName());
 
             String dateToday = req.getParameter("dateToday");
-//
-//            if (dateToday == null) {
-//                dt = today;
-//            } else {
-//                dt = Calendar.getInstance();
-//                dt.setTime(sfd.parse(dateToday));
-//            }
 
             dt = Calendar.getInstance();
             dt.setTime(sfd.parse(dateToday));
 
-            System.out.println("CHAMANDO O POST ----- ESTOU AQUI!");
+            System.out.println("OLÁ POST? -----> ESTOU AQUI!");
 
             Long userId = loggedUser.getCpf_id();
 
             List<WeightToday> weightDB = daoWeight.readWeight(dt, userId);
-            System.out.println("Tamanho da lista é: " + weightDB.size());
-            for (WeightToday item : weightDB) {
-                System.out.println(item.getCode());
-            }
 
             List<Pressure> pressureDB = daoPressure.read(dt, userId);
-            System.out.println("Tamanho da lista é: " + pressureDB.size());
-            for (Pressure item : pressureDB) {
-                System.out.println(item.getCode());
-            }
 
             List<Exercises> exerciseDB = daoEx.read(dt, userId);
-            System.out.println("Tamanho da lista é: " + exerciseDB.size());
-            for (Exercises item : exerciseDB) {
-                System.out.println(item.getCode());
-            }
-
 
             List<EatHabits> foodDB = daoFood.read(dt, userId);
-            System.out.println("Tamanho da lista é: " + foodDB.size());
-            for (EatHabits item : foodDB) {
-                System.out.println(item.getCode());
-            }
-
 
             List<Goals> goalDB = daoGoal.readGoals(userId);
-            System.out.println("Tamanho da lista é: " + goalDB.size());
-            for (Goals item : goalDB) {
-                System.out.println(item.getCode());
-            }
-
 
             List<Hydration> hydraDB = daoHydra.readHydra(dt, userId);
-            System.out.println("Tamanho da lista é: " + hydraDB.size());
-            for (Hydration item : hydraDB) {
-                System.out.println(item.getId());
-            }
-
 
             //construindo os dados sobre PESO que serão levados para o dashboard.
             boolean scW = buildWeightDashboard(req, loggedUser, weightDB, goalDB);
-            System.out.println(scW);
 
             //construindo os dados sobre Exercicio que serão levados para o dashboard.
             boolean scE = buildExerciseDashboard(req, exerciseDB, goalDB);
-            System.out.println(scE);
 
             //construindo os dados sobre Alimentos Consumidos que serão levados para o dashboard.
             boolean scF = buildEatHabits(req, foodDB, goalDB);
-            System.out.println(scF);
 
             //construindo os dados sobre hidratação que serão levados para o dashboard.
             boolean scH = buildHydra(req, hydraDB, goalDB);
-            System.out.println(scH);
 
             //construindo os dados sobre hidratação que serão levados para o dashboard.
             boolean scPI = buildPresImc(req, pressureDB, loggedUser, goalDB, weightDB);
-            System.out.println(scPI);
+
 
             if (scE && scF && scH && scPI && scW) {
                 System.out.println("TUDO TRUE - DAShBOARD");
-                req.setAttribute("sucess", "Dados Encontrados :)");
+                req.setAttribute("sucess", "Dados Encontrados &#128521;");
             } else {
                 System.out.println("TUDO FALSE - DAShBOARD");
-                req.setAttribute("err", "Não encontrei os dados :(");
+                req.setAttribute("err", "Não encontrei os dados &#128533;");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Deu merda no DashboardServlet " + e.getMessage());
-            req.setAttribute("err", "Não encontrei os dados :(");
+            req.setAttribute("err", "Não encontrei os dados &#128533;");
         }
         req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
     }
@@ -177,7 +137,6 @@ public class DashboardServlet extends HttpServlet {
         for (Pressure mmPressure : pressureDB) {
             mmAvgPressure += mmPressure.getSistolica_mm();
         }
-
         mmAvgPressure = mmAvgPressure / pressureDB.size();
 
         //calculo da pressão sist. hg média
@@ -188,6 +147,8 @@ public class DashboardServlet extends HttpServlet {
         hgAvgPressure = hgAvgPressure / pressureDB.size();
 
         PresImcDashboard pimc = new PresImcDashboard(goalImc, imcCurrent, mmAvgPressure, hgAvgPressure);
+
+        System.out.println(pimc.toString());
 
         req.setAttribute("pImcDash", pimc);
 
@@ -207,6 +168,8 @@ public class DashboardServlet extends HttpServlet {
         goalHydraDB = getGoals(goalDB, goalHydraDB, type);
 
         HydraDashboard hd = new HydraDashboard(goalHydraDB, gainHydraDB, qtdGlassDB);
+
+        System.out.println(hd.toString());
 
         req.setAttribute("hydraDash", hd);
 
@@ -238,6 +201,8 @@ public class DashboardServlet extends HttpServlet {
 
         EatHabitsDashboard ehd = new EatHabitsDashboard(goalFoodsDB, gainCalories, qtdCoffeeTea, qtdSnack, qtdMainMeal);
 
+        System.out.println(ehd.toString());
+
         req.setAttribute("foodDash", ehd);
 
         return true;
@@ -258,16 +223,18 @@ public class DashboardServlet extends HttpServlet {
 
         Calendar timeExercisesDB = null;
         for (Exercises exercises : exerciseDB) {
-            System.out.println(exercises.getTime());
+//            System.out.println("TEMPO DO EXERCICIO VEM ASSIM" + exercises.getTime());
         }
 
-//        ExerciseDashboard ed = new ExerciseDashboard(goalExerciseDB, lostCalories, qtdExercisesDB, timeExercisesDB);
+        ExerciseDashboard ed = new ExerciseDashboard(goalExerciseDB, lostCalories, qtdExercisesDB, timeExercisesDB);
 
-//        req.setAttribute("exerciseDash", ed);
+        System.out.println(ed.toString());
+
+
+        req.setAttribute("exerciseDash", ed);
 
         return true;
     }
-
 
     private boolean buildWeightDashboard(HttpServletRequest req, User loggedUser, List<WeightToday> weightDB, List<Goals> goalDB) {
         // Recuperando os dados quadrante PESO.
@@ -282,6 +249,8 @@ public class DashboardServlet extends HttpServlet {
 
         WeightDashboard wd = new WeightDashboard(goalWeightBD, lostWeight, lastWeightDB, initWeightDB);
 
+        System.out.println(wd.toString());
+
         req.setAttribute("weightDash", wd);
 
         return true;
@@ -293,7 +262,6 @@ public class DashboardServlet extends HttpServlet {
 
             if (goalList.get(i).getDescptGoal().equals(type)) {
                 goal = goalList.get(i).getQtdGoal();
-                System.out.println("Tem que imprimir as metas: " + goal);
             }
             i++;
         }

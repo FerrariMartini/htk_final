@@ -9,7 +9,6 @@ package model.entities_beans;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.Date;
 
 public class WeightToday implements Serializable {
 
@@ -34,10 +33,6 @@ public class WeightToday implements Serializable {
         return code;
     }
 
-    public void setCurrentImc(Double currentImc) {
-        this.currentImc = currentImc;
-    }
-
     public Double getWeightDay() {
         return weightDay;
     }
@@ -56,6 +51,10 @@ public class WeightToday implements Serializable {
 
     public double getCurrentImc() {
         return this.currentImc;
+    }
+
+    public void setCurrentImc(Double currentImc) {
+        this.currentImc = currentImc;
     }
 
     @Override

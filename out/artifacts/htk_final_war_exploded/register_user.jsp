@@ -88,7 +88,7 @@
 
                                 <div class="form-group col-md-4">
                                     <label>IMC Inicial</label>
-                                    <div id="showIMC" class="form-control"></div>
+                                    <div id="showIMC" class="form-control" readonly></div>
                                 </div>
                             </div>
 

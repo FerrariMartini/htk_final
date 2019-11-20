@@ -2,9 +2,7 @@ package model.DAO;
 
 import model.DBException.DBException;
 import model.entities_beans.Goals;
-import model.entities_beans.WeightToday;
 
-import java.util.Calendar;
 import java.util.List;
 
 public interface GoalsDAO {

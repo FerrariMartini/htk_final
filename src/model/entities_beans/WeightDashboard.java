@@ -8,16 +8,16 @@ public class WeightDashboard implements Serializable {
 
     private Double goal;
     private Double lost;
-    private Double lastWight;
+    private Double lastWeight;
     private Double initWeight;
 
     public WeightDashboard() {
     }
 
-    public WeightDashboard(Double goal, Double lost, Double lastWight, Double initWeight) {
+    public WeightDashboard(Double goal, Double lost, Double lastWeight, Double initWeight) {
         this.goal = goal;
         this.lost = lost;
-        this.lastWight = lastWight;
+        this.lastWeight = lastWeight;
         this.initWeight = initWeight;
     }
 
@@ -37,12 +37,12 @@ public class WeightDashboard implements Serializable {
         this.lost = lost;
     }
 
-    public Double getLastWight() {
-        return lastWight;
+    public Double getLastWeight() {
+        return lastWeight;
     }
 
-    public void setLastWight(Double lastWight) {
-        this.lastWight = lastWight;
+    public void setLastWeight(Double lastWeight) {
+        this.lastWeight = lastWeight;
     }
 
     public Double getInitWeight() {
@@ -58,7 +58,7 @@ public class WeightDashboard implements Serializable {
         return "WeightDashboard{" +
                 "goal=" + goal +
                 ", lost=" + lost +
-                ", lastWight=" + lastWight +
+                ", lastWight=" + lastWeight +
                 ", initWeight=" + initWeight +
                 '}';
     }

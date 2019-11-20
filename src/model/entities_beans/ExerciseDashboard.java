@@ -12,7 +12,8 @@ public class ExerciseDashboard implements Serializable {
     private Integer qtdExercises;
     private Calendar timeExercises;
 
-    public ExerciseDashboard(){};
+    public ExerciseDashboard() {
+    }
 
     public ExerciseDashboard(Double goal, Double lostCalories, Integer qtdExercises, Calendar timeExercises) {
         this.goal = goal;

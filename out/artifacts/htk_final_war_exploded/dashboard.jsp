@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -44,13 +45,14 @@
                     <div class="alert alert-danger text-center">${err}</div>
                 </c:if>
                 <div class="form-row align-items-center justify-content-around mb-2">
-                    <div class="row justify-content-center">
-                        <div class="flex-column">
-                            <c:if test="${not empty uName}">
-                                <h3 id="greetingDayStyleText">Olá ${uName}.<br>Lembre-se de beber muita água hoje!</h3>
-                            </c:if>
+                    <c:if test="${not empty uName}">
+                        <div class="row justify-content-center">
+                            <div class="flex-column">
+                                <h3 id="greetingDayStyleText">Olá <strong><strong>${uName}.</strong></strong><br>Realize
+                                    uma busca para ver seus dados. &#128512;</h3>
+                            </div>
                         </div>
-                    </div>
+                    </c:if>
                     <form id="findDay" action="Dashboard" method="post">
                         <div class="row justify-content-center">
                             <div class="flex-column">
@@ -76,34 +78,76 @@
             <div class="row justify-content-around">
                 <!-- PESO -->
                 <div class="card dashboard_card" id="peso">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <div class="row no-gutters align-items-end">
                             <div class="col-auto goal-text borderBottom-customized">
                                 <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                             </div>
-                            <div class="col-auto goal-number borderBottom-customized">&nbsp;$<span
-                                    class="goal-measure-unit">Kg</span></div>
+                            <c:if test="${not empty weightDash}">
+                                <div class="col-auto goal-number borderBottom-customized">
+                                    &nbsp;
+                                    <fmt:formatNumber type="number" pattern="###.##" value="${weightDash.goal}"/>
+                                    <span class="goal-measure-unit">Kg</span>
+                                </div>
+                            </c:if>
+                            <c:if test="${empty weightDash}">
+                                <div class="col-auto goal-number borderBottom-customized">
+                                    &nbsp;${"0"}
+                                    <span class="goal-measure-unit">Kg</span>
+                                </div>
+                            </c:if>
                         </div>
 
                         <div class="row no-gutters">
-                            <div class="col-auto align-self-center achieved-text">VOCÊ JÁ<br>PERDEU
+                            <div class="col-auto align-self-center achieved-text">VOCÊ PERDEU<br>OU GANHOU
                             </div>
-                            <div class="col-auto achieved-number-green">&nbsp;-3Kg</div>
+                            <c:if test="${not empty weightDash}">
+                                <div class="col-auto achieved-number-green">&nbsp;
+                                    <fmt:formatNumber type="number" pattern="###.##" value="${weightDash.lost}"/>
+                                    <span class="goal-measure-unit">Kg</span>
+                                </div>
+                            </c:if>
+                            <c:if test="${empty weightDash}">
+                                <div class="col-auto achieved-number-green">&nbsp;${"0"}
+                                    <span class="goal-measure-unit">Kg</span>
+                                </div>
+                            </c:if>
                         </div>
                         <div class="row">
                             <div class="row no-gutters">
                                 <div class="col-auto align-self-center weight-text">ÚLTIMO<br>PESO
                                 </div>
-                                <div class="col-auto weight-number">&nbsp;87<span
-                                        class="goal-measure-unit">&nbsp;Kg</span>
-                                </div>
+                                <c:if test="${not empty weightDash}">
+                                    <div class="col-auto weight-number">&nbsp;
+                                        <fmt:formatNumber type="number" pattern="###.##"
+                                                          value="${weightDash.lastWeight}"/>
+                                        <span class="goal-measure-unit">&nbsp;Kg</span>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${empty weightDash}">
+                                    <div class="col-auto weight-number">&nbsp;${"0"}
+                                        <span class="goal-measure-unit">&nbsp;Kg</span>
+                                    </div>
+                                </c:if>
                             </div>
                             <div class="row no-gutters">
                                 <div class="col-auto align-self-center weight-text">PESO<br>ATUAL
                                 </div>
-                                <div class="col-auto weight-number">&nbsp;84<span
-                                        class="goal-measure-unit">&nbsp;Kg</span>
-                                </div>
+                                <c:if test="${not empty weightDash}">
+                                    <div class="col-auto weight-number">&nbsp;
+                                        <fmt:formatNumber type="number"
+                                                          pattern="###.##"
+                                                          value="${weightDash.initWeight}"/>
+                                        <span class="goal-measure-unit">&nbsp;Kg</span>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${empty weightDash}">
+                                    <div class="col-auto weight-number">&nbsp;${"0"}
+                                        <span class="goal-measure-unit">&nbsp;Kg</span>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>
@@ -111,42 +155,73 @@
 
                 <!-- Exercicios -->
                 <div class="card dashboard_card" id="Exercises">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
-                                <div class="col-auto goal-text borderBottom-customized">
+                                <div class="flex-column goal-text borderBottom-customized">
                                     <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                                 </div>
-                                <div class="col-auto goal-number borderBottom-customized">&nbsp;3.500<span
-                                        class="goal-measure-unit">cal.</span></div>
+                                <c:if test="${not empty exerciseDash}">
+                                    <div class="flex-column goal-number borderBottom-customized">&nbsp;
+                                        <fmt:formatNumber type="number" pattern="#,###.#"
+                                                          value="${exerciseDash.goal}"/>
+                                        <span class="goal-measure-unit">cal.</span></div>
+                                </c:if>
+
+                                <c:if test="${empty exerciseDash}">
+                                    <div class="flex-column goal-number borderBottom-customized">&nbsp;${0}
+                                        <span class="goal-measure-unit">cal.</span></div>
+                                </c:if>
                             </div>
                         </table>
 
                         <div class="row no-gutters">
-                            <div class="col-auto align-self-center achieved-text">CALORIAS<br>PERDIDAS
+                            <div class="flex-column align-self-center achieved-text">CALORIAS<br>PERDIDAS
                             </div>
-                            <div class="col-auto achieved-number-red">&nbsp;3.103<span
-                                    class="goal-measure-unit">cal.</span></div>
+                            <c:if test="${not empty exerciseDash}">
+                                <div class="flex-column achieved-number-red">&nbsp;<fmt:formatNumber
+                                        type="number" pattern="#,###.#"
+                                        value="${exerciseDash.lostCalories}"/>
+                                    <span class="goal-measure-unit">cal.</span>
+                                </div>
+                            </c:if>
+                            <c:if test="${empty exerciseDash}">
+                                <div class="flex-column achieved-number-red">&nbsp;${0}
+                                    <span class="goal-measure-unit">cal.</span>
+                                </div>
+                            </c:if>
                         </div>
 
                         <div class="row no-gutters text-center">
                             <div class="flex-column align-self-center achieved-text mr-3">EXERCÍCIOS<br>REALIZADOS
                             </div>
-
                             <div class="justify-content-center">
                                 <i class="fas fa-running md48 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">2x</small>
-                                </div>
+                                <c:if test="${not empty exerciseDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${exerciseDash.qtdExercises}</small>
+                                    </div>
+                                </c:if>
+                                <c:if test="${empty exerciseDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${0}</small>
+                                    </div>
+                                </c:if>
                             </div>
-
                             <div class="justify-content-center">
                                 <i class="fas fa-stopwatch md48 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">3h40min.</small>
-                                </div>
+                                <c:if test="${not empty exerciseDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${exerciseDash.timeExercises}</small>
+                                    </div>
+                                </c:if>
+                                <c:if test="${empty exerciseDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${"3h40min"}</small>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>
@@ -157,32 +232,70 @@
             <div class="row justify-content-center">
                 <!-- IMC -->
                 <div class="card dashboard_card">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">
                                     <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                                 </div>
-                                <div class="col-auto goal-number borderBottom-customized">&nbsp;25,1<span
-                                        class="goal-measure-unit">&nbsp;normal</span></div>
+                                <c:if test="${not empty pImcDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">&nbsp;
+                                        <fmt:formatNumber type="number"
+                                                          pattern="##.#"
+                                                          value="${pImcDash.goal}"/>
+                                        <span class="goal-measure-unit">&nbsp;normal</span></div>
+                                </c:if>
+
+                                <c:if test="${empty pImcDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">&nbsp;
+                                            ${0}
+                                        <span class="goal-measure-unit">&nbsp;normal</span></div>
+                                </c:if>
                             </div>
                         </table>
 
                         <div class="row no-gutters">
                             <div class="col-auto align-self-center achieved-text">SEU IMC<br>ATUAL É:
                             </div>
-                            <div class="col-auto achieved-number-red">&nbsp;28,9<span
-                                    class="goal-measure-unit">&nbsp;sobrepeso</span>
-                            </div>
+                            <c:if test="${not empty pImcDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;
+                                    <fmt:formatNumber type="number"
+                                                      pattern="##.#"
+                                                      value="${pImcDash.imcCurrent}"/>
+                                    <span
+                                            class="goal-measure-unit">&nbsp;sobrepeso</span>
+                                </div>
+                            </c:if>
+
+                            <c:if test="${empty pImcDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;${0}
+                                    <span class="goal-measure-unit">&nbsp;sobrepeso</span>
+                                </div>
+                            </c:if>
                         </div>
 
                         <div class="row no-gutters">
                             <div class="col-auto align-self-center achieved-pressure-text">
                                 <i class="fas fa-heartbeat"></i>&nbsp;PRESSÃO<br>ARTERIAL MÉDIA
                             </div>
-                            <div class="col-auto achieved-pressure-number">&nbsp;11,2 / 78<span
-                                    class="goal-measure-unit">&nbsp;mm Hg</span>
-                            </div>
+                            <c:if test="${not empty pImcDash}">
+                                <div class="col-auto achieved-pressure-number">
+                                    &nbsp; <fmt:formatNumber type="number"
+                                                             pattern="##"
+                                                             value="${pImcDash.mmAvgPressure}"/>/
+                                    <fmt:formatNumber type="number"
+                                                      pattern="##"
+                                                      value="${Float.parseFloat(pImcDash.hgAvgPressure)}"/>
+
+                                    <span class="goal-measure-unit">&nbsp;mm Hg</span>
+                                </div>
+                            </c:if>
+                            <c:if test="${ empty pImcDash}">
+                                <div class="col-auto achieved-pressure-number">
+                                    &nbsp;${0}/${0}
+                                    <span class="goal-measure-unit">&nbsp;mm Hg</span>
+                                </div>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -193,22 +306,41 @@
             <div class="row justify-content-around mb-5">
                 <!-- Calorias -->
                 <div class="card align-items-center dashboard_card" id="calorias">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">
                                     <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                                 </div>
-                                <div class="col-auto goal-number borderBottom-customized">&nbsp;2.500<span
-                                        class="goal-measure-unit">cal.</span></div>
+                                <c:if test="${not empty foodDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">&nbsp;
+                                        <fmt:formatNumber type="number"
+                                                          pattern="#,###.#"
+                                                          value="${foodDash.goal}"/>
+                                        <span class="goal-measure-unit">cal.</span></div>
+                                </c:if>
+
+                                <c:if test="${empty foodDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">&nbsp;${0}
+                                        <span class="goal-measure-unit">cal.</span></div>
+                                </c:if>
                             </div>
                         </table>
 
                         <div class="row no-gutters">
                             <div class="col-auto align-self-center achieved-text">CALORIAS<br>CONSUMIDAS
                             </div>
-                            <div class="col-auto achieved-number-red">&nbsp;2.103<span
-                                    class="goal-measure-unit">cal.</span></div>
+                            <c:if test="${not empty foodDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;
+                                    <fmt:formatNumber type="number"
+                                                      pattern="#,###.#"
+                                                      value="${foodDash.gainCalories}"/>
+                                    <span class="goal-measure-unit">cal.</span></div>
+                            </c:if>
+                            <c:if test="${ empty foodDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;${0}<span
+                                        class="goal-measure-unit">cal.</span></div>
+                            </c:if>
                         </div>
 
                         <div class="row no-gutters">
@@ -217,25 +349,48 @@
                             <div class="text-center ml-4">
                                 <i class="fas fa-coffee md20 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">1x</small>
-                                </div>
+                                <c:if test="${ not empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${foodDash.qtdCoffeTea}</small>
+                                    </div>
+                                </c:if>
+                                <c:if test="${empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${"0"}</small>
+                                    </div>
+                                </c:if>
                             </div>
 
                             <div class="text-center">
                                 <i class="fas fa-drumstick-bite md20 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">2x</small>
-                                </div>
+                                <c:if test="${ not empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${foodDash.qtdMainMeal}</small>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${"0"}</small>
+                                    </div>
+                                </c:if>
                             </div>
 
                             <div class="text-center">
                                 <i class="fas fa-hamburger md20 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">2x</small>
-                                </div>
+                                <c:if test="${ not empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${foodDash.qtdSnack}</small>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${empty foodDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${"0"}</small>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>
@@ -243,33 +398,60 @@
 
                 <!-- ÁGUA -->
                 <div class="card dashboard_card" id="agua">
-                    <div class="card-body">
+                    <div class="dash_card_body">
                         <table>
                             <div class="row no-gutters align-items-end">
                                 <div class="col-auto goal-text borderBottom-customized">
                                     <i class="fas fa-bullseye"></i>&nbsp;sua META é:
                                 </div>
-                                <div class="col-auto goal-number borderBottom-customized">&nbsp;4<span
-                                        class="goal-measure-unit">&nbsp;litros</span></div>
+                                <c:if test="${not empty hydraDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">
+                                        &nbsp;<fmt:formatNumber type="number" pattern="###.##"
+                                                                value="${hydraDash.goal}"/>
+                                        <span class="goal-measure-unit">&nbsp;litros</span></div>
+                                </c:if>
+
+                                <c:if test="${empty hydraDash}">
+                                    <div class="col-auto goal-number borderBottom-customized">
+                                        &nbsp;${0}<span
+                                            class="goal-measure-unit">&nbsp;litros</span></div>
+                                </c:if>
                             </div>
                         </table>
 
                         <div class="row no-gutters">
                             <div class="col-auto align-self-center achieved-text">QTD DE ÁGUA<br>CONSUMIDA
                             </div>
-                            <div class="col-auto achieved-number-red">&nbsp;2,5<span
-                                    class="goal-measure-unit">&nbsp;litos.</span></div>
+                            <c:if test="${not empty hydraDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;
+                                    <fmt:formatNumber type="number" pattern="###.##"
+                                                      value="${hydraDash.gainHydra}"/><span
+                                            class="goal-measure-unit">&nbsp;litros.</span></div>
+                            </c:if>
+
+                            <c:if test="${empty hydraDash}">
+                                <div class="col-auto achieved-number-red">&nbsp;${0}<span
+                                        class="goal-measure-unit">&nbsp;litros.</span></div>
+                            </c:if>
                         </div>
 
                         <div class="row no-gutters">
                             <div class="col-auto align-self-center achieved-text">NÍVEL DE<br>HIDRATAÇÃO
                             </div>
-                            <div class="text-center ml-4    ">
+                            <div class="text-center ml-4">
                                 <i class="fas fa-glass-whiskey md38 icon_gray"></i>
                                 <br/>
-                                <div class="container text-center">
-                                    <small class="text-qtd">8x</small>
-                                </div>
+                                <c:if test="${not empty hydraDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${hydraDash.qtdGalss}x</small>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${empty hydraDash}">
+                                    <div class="container text-center">
+                                        <small class="text-qtd">${0}x</small>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>
